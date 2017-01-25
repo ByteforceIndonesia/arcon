@@ -1,0 +1,413 @@
+html
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    height: 100%;
+    background-color: transparent;
+}
+.home-slider
+{
+    position: relative;
+    position: relative;
+    display: block;
+    float: left;
+    margin-bottom : -10px;
+    width: 100%;
+    background-color: transparent!important;
+    background-size: cover;
+}
+.parallax-window {
+    min-height: 100%;
+    height : 100%;
+    background: transparent;
+}
+.parallax-windowz {
+    position : relative;
+    float : left;
+    min-height: 100%;
+    height : 100%;
+    background: transparent;
+}
+.parallax-window2 {
+    min-height: 50%;
+    height : 50%;
+    background: transparent;
+}
+.parallax-window3 {
+    min-height: 50%;
+    height : 50%;
+    background: transparent;
+}
+
+.wi-navigation-left {
+  padding-left : 0px;
+}
+.wi-navigation-left li
+{
+    float: left;
+    list-style: None;
+    text-decoration: none;
+}
+.wi-navigation-right li
+{
+    float: right;
+    margin: 0 0;
+    margin-top: 14px;
+    margin-left: 28px;
+    list-style: None;
+    text-decoration: none;
+    font-size: 18px;
+}
+.wi-navigation-right a
+{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+.wi-navigation-right li:after
+{
+    position: relative;
+    display: block;
+    float: right;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    content: '';
+    transition: all .2s ease-out;
+}
+.wi-navigation-right li:hover:after
+{
+    width: 100%;
+}
+.wi-navigation-right .active li:after
+{
+    width: 100%;
+}
+
+.wi-navigation
+{
+    position: absolute;
+    bottom: 0;
+    z-index : 1000;
+    margin-bottom: 0px;
+    padding: 6px;
+    width: 100%;
+    background-color: rgba(0, 0, 0,0);
+}
+
+.wi-logo
+{
+    width: 260px;
+    height: 42px;
+    background-image: url('../../images/logotext.png');
+    background-position-y: 16px;
+    background-size: 260px;
+    background-repeat: no-repeat;
+}
+
+
+
+.content
+{
+  position : relative;
+  z-index : 100;
+    padding-bottom : 100px;
+    min-height: 100%;
+    height: auto;
+}
+
+.content-gallery{
+    position: relative;
+    display: block;
+    padding-top : 50px;
+    padding-bottom : 50px;
+    min-height: 80%;
+    width: 100%;
+    background-color : white;
+    background-size: cover;
+
+}
+.content-whatWeDo{
+    position: relative;
+    display: block;
+    padding-top : 50px;
+    min-height: 80%;
+    width: 100%;
+    background-color : white;
+    background-size: cover;
+
+}
+.wwdTitle{
+  padding-bottom : 10px;
+  letter-spacing : 1px;
+  font-size: 140%;
+}
+
+.serviceList{
+  margin-top : 10px;
+  padding-left : 18px;
+  letter-spacing : 3px;
+  font-size: 18px;
+}
+
+.imageContainer{
+  position : relative;
+}
+
+.logo-content
+{
+    margin: 10%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.content-menu
+{
+    float: right;
+    margin: 10%;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.content-menu h3
+{
+    display: block;
+    float: right;
+    margin: 16px 0 8px 8px;
+    width: auto;
+    letter-spacing: 4px;
+}
+
+.content-menu-line
+{
+    position: relative;
+    float: right;
+    margin-right: 10%;
+    width: 80%;
+    height: 2px;
+    background-color: black;
+}
+
+.content-menu-links{
+  float : right;
+  margin-top : 16px;  margin-right : 10%;
+  text-align : right;
+}
+
+.content-menu-links a li {
+  margin-top : 6px;
+  margin-right : 0px;
+  list-style : none;
+}
+.content-menu-links a {
+  margin-right : 0px;
+  color : black;
+  text-decoration : none;
+font-size : 18px;
+}
+.content-menu-links a:after{position : relative;
+  position : relative;
+  display: inline-block;
+  margin-right : 0px;
+  padding : 0px;
+  padding-top : 0px;
+  width : 0%;
+  height : 2px;
+  background-color : black;
+  content : '';
+  transition : all 0.2s;
+}
+.content-menu-links a:hover:after{
+  position : relative;
+  width : 100%;
+
+}
+
+.content-menu-line-under
+{
+    position: relative;
+    display: block;
+    float: right;
+    margin-top: 0;
+    margin-right: 10%;
+    width: 60%;
+    height: 2px;
+    background-color: black;
+}
+
+
+.content-menu-title
+{
+    position: relative;
+}
+.firstImage{
+  margin-top: 0px;
+  margin-bottom : 30px;
+}
+
+.largeImage{
+  margin-top : 50px;
+}
+
+.smallImage{
+  margin-bottom: 30px;
+
+}
+
+.nopadding-right{
+  padding-right : 0px;
+}
+
+.nopadding-left{
+  padding-left : 0px;
+}
+
+.ourMotto{
+  padding-top : 50px;
+  font-size : 120%;
+}
+
+.content2
+{
+    position: relative;
+    display: block;
+    min-height: 100%;
+    width: 100%;
+    height: 100%;
+    background-color : transparent;
+    background-size: cover;
+}
+.content-pre
+{
+    display: block;
+    padding : 0px;
+    min-height: 30%;
+    width: 100%;
+    height : 40%;
+    background-color :transparent;
+}
+.content-contacts
+{
+    display: block;
+    padding-top : 50px;
+    padding-bottom : 50px;
+    min-height: 30%;
+    width: 100%;
+    background-color : #000;
+    background-size: cover;
+}
+.marketingPhone li{
+  margin-left : 0px;
+  color : white;
+  text-align : center;
+}
+
+.contact-name{position : relative;
+  font-weight : 600;
+  font-size : 120%;
+
+}
+.marketingPhone{
+  margin-left : 0px;
+  list-style : none;
+}
+
+.contact-profile-picture img{position : relative;
+  margin-bottom : 15px;
+  width : 90%;
+  border-radius : 100%;
+}
+.contact-form input:focus{
+  padding-left : 0px;
+  border: 0px;
+  border-bottom : 2px black solid;
+  border-radius : 0%;
+  box-shadow : none;
+
+}
+.contact-form input[type="text"]{
+  margin-top : 5px;
+  padding-left : 0px;
+  width : 75%;
+  border: 0px;
+  border-bottom : 2px #777 solid;
+  border-radius : 0%;
+  box-shadow : none;
+  font-size : 12px;
+
+}
+.contact-form input[type="textarea"]{
+  margin-top : 5px;
+  padding-left : 0px;
+  width : 75%;
+  border: 0px;
+  border-bottom : 2px #777 solid;
+  border-radius : 0%;
+  box-shadow : none;
+  font-size : 12px;
+
+}
+
+.contact-form input[type="submit"]{
+  margin-top : 16px;
+  margin-bottom : 24px;
+  width : 30%;
+  border-radius : 8px;
+  box-shadow : none;
+  font-size : 14px;
+
+}
+.contact-form input[type="submit"]:hover{
+  margin-top : 16px;
+  margin-bottom : 24px;
+  width : 30%;
+  border-color : #000;
+  border-radius : 8px;
+  box-shadow : none;
+  font-size : 14px;
+
+}
+
+.contact-form input[type="submit"]:focus{
+  margin-top : 16px;
+  margin-bottom : 24px;
+  width : 30%;
+  outline: 0;
+  border-color : #000;
+  border-radius : 8px;background-image: none;
+  -webkit-box-shadow: none;
+  box-shadow : none;
+          box-shadow: none;
+  font-size : 14px;
+
+}
+
+.content-footer
+{
+    position: relative;
+    position: relative;
+    display: block;
+    float: left;
+    padding-top : 36px;
+    min-height: 10%;
+    width: 100%;
+    height: 30%;
+    background-color :white;
+    background-size: cover;
+}
+
+.logo-footer{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+}
