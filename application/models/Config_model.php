@@ -2,6 +2,12 @@
 
 class Config_model extends CI_Model
 {	
+
+	public function page_title ()
+	{
+		return $this->db->get_where('config', array('config_name' => 'page_title'))->row();
+	}
+
 	public function home_slider ()
 	{
 		return $this->db->get_where('config', array('config_name' => 'home_slider'))->row();
@@ -14,7 +20,7 @@ class Config_model extends CI_Model
 
     public function parallax ($id)
 	{
-		return $this->db->get_where('config', array('config_name' => 'parallax_' . $id))->row();
+		return $this->db->get_where('parallax', array('name' => 'parallax_' . $id))->row();
 	}
 
     public function team_members ()
@@ -30,5 +36,15 @@ class Config_model extends CI_Model
     public function gallery_banner ()
 	{
 		return $this->db->get_where('gallery', array('name' => 'banner'))->row();
+	}
+
+	public function galleries ()
+	{
+		return $this->db->get_where('gallery', array('name !=' => 'banner'))->result();
+	}
+
+	public function whatwedo ()
+	{
+		return $this->db->get_where('whatwedo', array('name !=' => 'banner'))->result();
 	}
 }

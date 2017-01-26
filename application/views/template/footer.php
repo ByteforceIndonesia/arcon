@@ -23,7 +23,7 @@
 If you have questions that require immediate attention,
 please visit us or contact our phone number above:</p>
 
-  <?php echo form_open('email', array('class' => 'contact-form')); ?>
+  <?php echo form_open('home/email', array('class' => 'contact-form')); ?>
     <input type = "text" class="form-control nama" name= "nama" id = "nama" placeholder="Enter Your Name"/>
     <input type = "text" class="form-control nama" name= "nama" id = "nama" placeholder="How can we contact you? (Phone/Email)"/>
     <input type = "textarea" class="form-control message-text-area" name= "nama" id = "nama" placeholder="Enter Your Message" wrap="on" rows="3" />

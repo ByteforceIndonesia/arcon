@@ -69,33 +69,33 @@
               <img src="<?php echo base_url() . $gallery_banner->image ?>" alt="" class="firstImage" width = "100%">
 
               <div class="col-lg-6 nopadding-left">
-                <img src="<?php echo base_url() . $gallery_banner->image ?>" alt="" class="smallImage" width = "100%">
-                <img src="<?php echo base_url() . $gallery_banner->image ?>" alt="" class="smallImage" width = "100%">
-                <img src="<?php echo base_url() . $gallery_banner->image ?>" alt="" class="smallImage" width = "100%">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-
+              <?php foreach ($galleries as $count => $ones): ?>
+                <?php if($count > 3) break; ?>
+                <img src="<?php echo base_url() . $ones->image ?>" alt="" class="smallImage" width = "100%">
+              <?php endforeach; ?>
               </div>
-              <div class="col-lg-6 nopadding-right">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-                <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
 
+              <div class="col-lg-6 nopadding-right">
+              <?php foreach ($galleries as $count => $ones): ?>
+                <?php if($count > 6) {
+                  break;
+                }else if($count<3) {
+                  continue;
+                }?>
+                <img src="<?php echo base_url() . $ones->image ?>" alt="" class="smallImage" width = "100%">
+              <?php endforeach; ?>
               </div>
           </div>
 
             <div class="col-lg-4">
-              <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-              <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-              <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-              <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-              <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-              <img src="images/10.jpg" alt="" class="smallImage" width = "100%">
-
+            <?php foreach ($galleries as $count => $ones): ?>
+                <?php if($count > 10) {
+                  break;
+                }else if($count<6) {
+                  continue;
+                }?>
+              <img src="<?php echo base_url() . $ones->image ?>" alt="" class="smallImage" width = "100%">
+            <?php endforeach; ?>
             </div>
           </div>
       </div>
