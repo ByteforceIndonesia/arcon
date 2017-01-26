@@ -28,7 +28,7 @@ class Home extends CI_Controller {
 
 		//Gallery
 		$this->data['gallery_banner'] 		= $this->config_model->gallery_banner();
-		$this->data['galleries'] 			= $this->config_model->galleries();
+		$this->data['galleries'] 			= $this->config_model->galleries_freatured();
 
 		//What we do
 		$this->data['wedo'] 				= $this->config_model->whatwedo();

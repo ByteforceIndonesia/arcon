@@ -38,9 +38,9 @@ class Config_model extends CI_Model
 		return $this->db->get_where('gallery', array('name' => 'banner'))->row();
 	}
 
-	public function galleries ()
+	public function galleries_freatured ()
 	{
-		return $this->db->get_where('gallery', array('name !=' => 'banner'))->result();
+		return $this->db->get_where('gallery', array('name !=' => 'banner', 'freatured' => 1))->result();
 	}
 
 	public function whatwedo ()
