@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
         //Call Inheritance
         parent::__construct();
 
-        if(!$this->session->userdata())
+        if(!$this->session->userdata('logged-in'))
         {
             redirect(base_url('login'));
         }else{
@@ -19,16 +19,19 @@ class Admin extends CI_Controller {
 
 	public function index ()
 	{
-		$this->load->view('admin/logins/login_form');
+        $this->load->view('admin/template/header');
+        $this->load->view('admin/dashboard');
+        $this->load->view('admin/template/footer');
 	}
 
-    public function login()
+    public function config ()
     {
-        if($this->login_model->login())
+        if($this->input->post())
         {
-                
-        }else{
             
+        }else
+        {
+
         }
     }
 }
