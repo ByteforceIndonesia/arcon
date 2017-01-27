@@ -125,7 +125,7 @@ body
 {
     width: 260px;
     height: 42px;
-    background-image: url('../../images/logotext.png');
+    background-image: url('../images/logotext.png');
     background-position-y: 16px;
     background-size: 260px;
     background-repeat: no-repeat;
