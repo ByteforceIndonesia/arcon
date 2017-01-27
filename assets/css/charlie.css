@@ -1,0 +1,16 @@
+
+
+.galleryBigImage{
+  position : relative;
+  margin-top : 36px;
+}
+.galleryTitle{
+  position : relative;
+  width : 100%;
+  height : 200px;
+}
+
+
+.ImagePackBig{
+  margin-top : 36px;
+}

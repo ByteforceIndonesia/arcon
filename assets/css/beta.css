@@ -1,0 +1,112 @@
+.wi-navigation{
+  position : fixed;
+  top : 0px;
+  bottom : auto;
+  background-color : white;
+}
+
+.wi-navigation{
+  color : #000!important;
+}
+
+
+.wi-navigation-right a
+{
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+
+.content-gallery{
+  margin-top : 40px;
+}
+
+
+.smallImage{
+}
+
+.ImagePack{
+  overflow : hidden;
+  margin-bottom : 30px;
+  width : 100%;
+  text-align : right;
+  transition : all 0.3s ease-in;
+
+}
+
+.galleryImageTitle{
+  position : absolute;
+  z-index : 10;
+  float : right;
+  margin-top : 200px;
+  padding : 4%;
+  width : 92%;
+    color : rgba(255,255,255,0.6);
+  text-align : right;
+  font-size : 18px;
+  transition : all 0.3s ease-in;
+}
+
+
+
+.ImagePack:hover .galleryImageTitle{
+  color : rgba(255,255,255,1);
+}
+
+.galleryImageTitle:after{
+  position: relative;
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  content: '';
+  text-align : right;
+  transition: all .2s ease-out;
+}
+
+.ImagePack:hover .galleryImageTitle:after{
+  width : 100%;
+}
+
+
+.ImagePack:hover {
+    box-shadow: 2px 2px 5px #888888;
+  filter:contrast(120%) brightness(120%);
+}
+
+
+.galleryBigImageTitle{
+  position : absolute;
+  z-index : 100;
+  float : right;
+  margin-top : 200px;
+  background-color : transparent;
+  color : white;
+  text-align : right;
+  font-size : 18px;
+  transition : all 0.3s ease-in;
+}
+.productPageTitle{
+  width : 100%;
+  text-align : center;
+  font-size : 24px;
+}
+
+
+.contentProduct{
+  text-align : center;
+}
+.productPageAlamat{
+  padding-bottom : 25px;
+  font-size : 18px;
+}
+.productPageLine{
+    margin-top : 6px;
+  margin-bottom : 6px;
+  margin-left : 5%;
+  width : 90%;
+  border-top  : 2px solid;
+}

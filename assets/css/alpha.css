@@ -82,6 +82,25 @@ body
     content: '';
     transition: all .2s ease-out;
 }
+
+.wnrBlack li:after{
+    position: relative;
+    display: block;
+    float: right;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    content: '';
+    transition: all .2s ease-out;
+
+}
+
+
+.wnrBlack li:hover:after
+{
+    width: 100%;
+}
+
 .wi-navigation-right li:hover:after
 {
     width: 100%;
@@ -257,6 +276,7 @@ font-size : 18px;
 
 .largeImage{
   margin-top : 50px;
+    margin-bottom : 50px;
 }
 
 .smallImage{
@@ -410,4 +430,99 @@ font-size : 18px;
   margin-top: 10px;
   margin-bottom: 20px;
   width: 100%;
+}
+
+.Gallery{
+  height : 100%;
+}
+
+.galleryResidence{
+  position : relative;
+  float : left;
+    min-height : 100%;
+  width : 50%;
+  background-color : blue;
+  text-align : center;
+}
+
+.galleryMargin{
+  position : relative;
+  display : block;
+  float : left;
+      margin-top : 45%;
+    min-height : 45%;
+  width : 100%;
+  background-color : transparent;
+  text-align : center;
+}
+
+.galleryComercial{
+  position : relative;
+  float : left;
+    min-height : 100%;
+  width : 50%;
+  background-color : orange;
+  text-align : center;
+}
+
+.galleryText{
+    position : relative;
+  display : inline-block;
+  padding-top : 22px;
+  width : 100%;
+  background-color : rgba (255,255,255, 0.4);
+color : white;vertical-align: 100%;  vertical-align: top;
+  letter-spacing : 10px;
+  font-weight : 400;
+  font-size : 240%;
+  line-height : 44px;
+}
+
+
+.galleryText:after
+{
+    position: absolute;
+    display: block;
+    margin-top : 10px;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    content: '';
+text-align:left;
+    transition: all 0.2s ease-out;
+}
+.galleryText:before
+{
+    position: absolute;
+    top : 10px;
+    right : 0px;
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    content: '';    text-align:right;
+    transition: all 0.2s ease-out;
+}
+
+.galleryMenu{
+  background-size : cover;
+    filter:  grayscale(100%) brightness(70%);
+  transition: all 0.2s ease-out;
+}
+
+.galleryMenu:hover{
+  filter:  grayscale(60%) brightness(100%);
+}
+
+.galleryMenu:hover .galleryText:after
+{
+width: 100%;
+}
+.galleryMenu:hover .galleryText:before
+{
+width: 100%;
+}
+.galleryMenu:hover .galleryText:before
+{
+width: 100%;
 }
