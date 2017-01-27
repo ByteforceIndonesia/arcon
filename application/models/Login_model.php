@@ -13,7 +13,7 @@ class Login_model extends CI_Model
 				echo 'masuk';
 			}else
 			{
-				echo 'ga masuk';
+				echo 'ga asuk';
 			}
 		}else
 		{
