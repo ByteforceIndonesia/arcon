@@ -18,147 +18,35 @@
 
       <div class="">
           <div class="col-lg-12">
-
-
-            <div class="galleryBigImage">
-              <div class= "ImagePackBig">
-                <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                  <a href= "#">
-                  <div class="galleryBigImageTitle">  <span class="imageTitle">Aaaaaaaaaaaaaaaaaaaaaantaya Tour Palembang</span><br>
-                      <span class="galleryBigImageAlamat">Antaya Tour Palembang</span>
-                  </div>
-                </a>
-              </div>
-              <div class= "ImagePackBig">
-                <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                  <a href= "#">
-                  <div class="galleryBigImageTitle">  <span class="imageTitle">Aaaaaaaaaaaaaaaaaaaaaantaya Tour Palembang</span><br>
-                      <span class="galleryBigImageAlamat">Antaya Tour Palembang</span>
-                  </div>
-                </a>
-              </div>
-
-            </div>
-          </div>
           <div class="image">
             <div class="col-lg-12">
-
               <div class="col-lg-6 nopadding-left">
-              <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
+              <?php 
+                foreach($gallery as $count => $project): 
+                if($count > count($gallery)/2) break;
+              ?>
+                <a href= "<?php echo base_url('project/' . $project->project_uuid) ?>">
+                    <div class= "ImagePack">
+                        <span class="galleryImageTitle"><?php echo $project->name ?></span>
+                        <img src="<?php echo base_url() . $project->images . '/freatured.jpg' ?>" alt="" class="smallImage" width = "100%">
+                    </div>
                 </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-
-
-              </div>
-
+                <?php endforeach; ?>
+            </div>
+            
               <div class="col-lg-6 nopadding-right">
-              <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
+              <?php 
+                foreach($gallery as $count => $project): 
+                if($count < count($gallery)/2) continue; 
+                if($count > count($gallery)) break;
+              ?>
                 <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
+                    <div class= "ImagePack">
+                        <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
+                        <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
+                    </div>
                 </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-                <a href= "#">
-                <div class= "ImagePack">
-                  <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                  <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
-                </div>
-                </a>
-
-
+              <?php endforeach; ?>
               </div>
           </div>
 
