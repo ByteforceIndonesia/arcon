@@ -33,9 +33,9 @@ class Config_model extends CI_Model
         return $this->db->get_where('about', array('field' => $id . '_text'))->row();
     }
 
-    public function gallery_banner ()
+    public function gallery_banner ($id)
 	{
-		return $this->db->get_where('gallery', array('name' => 'banner'))->row();
+		return $this->db->get_where('config', array('config_name' => 'gallery_banner_' . $id))->row()->value_one;
 	}
 
 	public function galleries_freatured ()
@@ -45,6 +45,16 @@ class Config_model extends CI_Model
 
 	public function whatwedo ()
 	{
-		return $this->db->get_where('whatwedo', array('name !=' => 'banner'))->result();
+		return $this->db->get_where('whatwedo')->result();
+	}
+
+	public function offices ()
+	{
+		return $this->db->get_where('config', array('config_name' => 'offices'))->row();
+	}
+
+	public function contact_us ()
+	{
+		return $this->db->get_where('config', array('config_name' => 'contact_us'))->row();
 	}
 }

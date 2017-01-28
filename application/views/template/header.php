@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title -->
-    <title><?php $page_title ?></title>
+    <title><?php echo $page_title ?></title>
 
     <!-- CSS -->
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
@@ -26,11 +26,11 @@
                     <li class="wi-logo"></li>
                 </ul>
                 <ul class="pull-right wi-navigation-right">
-                    <a href="#" class ="active"><li>Home</li></a>
-                    <a href = "#"><li>About</li></a>
-                    <a href = "#content-gallery"><li>Gallery</li></a>
-                    <a href = "#"><li>What we do</li></a>
-                    <a href = "#"><li>Contact</li></a>
+                    <a href = "<?php echo base_url(); ?>" <?php if($this->uri->segment(1) != 'gallery'): ?>class ="active"<?php endif; ?>><li>Home</li></a>
+                    <a href = "<?php echo base_url(); ?>#about"><li>About</li></a>
+                    <a href = "<?php echo base_url('gallery') ?>" <?php if($this->uri->segment(1) == 'gallery'): ?>class ="active"<?php endif; ?>><li>Gallery</li></a>
+                    <a href = "<?php echo base_url(); ?>#whatwedo"><li>What we do</li></a>
+                    <a href = "<?php echo base_url(); ?>#contact"><li>Contact</li></a>
                 </ul>
             </div>
         </div>

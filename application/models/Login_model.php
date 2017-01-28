@@ -6,18 +6,20 @@ class Login_model extends CI_Model
 
 	public function login ()
 	{
-		if($this->input->post)
+		//Get the inputted username and password
+		$this->username =  $this->input->post('username');
+		$this->password =  $this->input->post('password');
+
+		//Check Username on Database
+		if($user = $this->db->get_where('admin', array('username' => $this->username))->row())
 		{
-			if($this->login_model->login())
-			{
-				echo 'masuk';
-			}else
-			{
-				echo 'ga asuk';
-			}
+			//Check Password
+			return password_verify($this->password, $user->password);
 		}else
 		{
-			$this->load->view('admin/login_form');
+			return false;
 		}
 	}
+
+	
 }
