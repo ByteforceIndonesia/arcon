@@ -1,6 +1,6 @@
 <head>
 
-    <title>Login Admin | Arcon Indonesia</title>
+    <title>New Admin Login | Arcon Indonesia</title>
 
         <style>
             @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700);
@@ -182,18 +182,18 @@
 <div id="wrapper">
 <div class="login">
   <div class="heading">
-    <h2>Sign in</h2>
+    <h2>Sign Up</h2>
     
-    <?php if($this->session->flashdata('login')): ?>
-        <h4 style="color:white">
-            <?php echo $this->session->flashdata('login'); ?>
-        </h4><br>
-    <?php endif; ?>
-    
-    <?php echo form_open('login/login') ?>
+    <?php echo form_open('login/new_user') ?>
+      
       <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <input type="text" class="form-control" placeholder="Username or email" name="username" autocomplete="off">
+        <input type="text" class="form-control" placeholder="Name" name="name" autocomplete="off">
+          </div>
+      
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="text" class="form-control" placeholder="Username" name="username" autocomplete="off">
           </div>
 
         <div class="input-group input-group-lg">

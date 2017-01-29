@@ -17,15 +17,52 @@ class Login extends CI_Controller {
     {
         if($this->login_model->login())
         {
-                
-        }else{
+            $data = $this->login_model->get_info();
             
+            $userdata = array(
+            
+                'name'      => $data->name,
+                'username'  => $data->username,
+                'logged-in' => TRUE
+                
+            );
+            
+            $this->session->set_userdata($userdata);
+             
+            redirect(base_url('admin'));
+        }else{
+            session_destroy();
+            $this->session->set_flashdata('login', "Wrong Password or Username!");
+            $this->index();
         }
     }
 
     //Dev only
 	public function new_user ()
 	{
-
+        if($this->input->post())
+        {
+            $data = array (
+                
+            'name'      => $this->input->post('name'),
+            'username'  => $this->input->post('username'),
+            'password'  => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
+                
+            );
+            
+            if($this->login_model->new_user($data))
+            {
+                $this->session->set_flashdata('login', "Please Login Using Your Username and Password");
+                $this->index();
+            }else
+            {
+                $this->session->set_flashdata('login', "Creating Username Failed (Error - 001)");
+                $this->index();
+            }
+            
+        }else
+        {
+            $this->load->view('admin/logins/sign_up');
+        }
 	}
 }

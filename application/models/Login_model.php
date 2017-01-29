@@ -21,5 +21,14 @@ class Login_model extends CI_Model
 		}
 	}
 
+    public function new_user($data)
+    {
+        return $this->db->insert('admin', $data);
+    }
+    
+    public function get_info ()
+    {
+        return $this->db->get_where('admin', array('username' => $this->input->post('username')))->row();
+    }
 	
 }

@@ -9,14 +9,19 @@ class Project extends MY_Controller {
 
     }
 
-    public function residence ()
+    public function index($uuid)
     {
-
-    }
-
-    public function comercial ()
-    {
-        
+        if($uuid == '')
+        {
+            redirect(base_url());
+        }else
+        {
+            $this->data['project'] = $this->project_model->get($uuid);
+            
+            $this->load->view('template/header', $this->data);
+            $this->load->view('frontpages/project', $this->data);
+            $this->load->view('template/footer', $this->data);
+        }
     }
 
 }

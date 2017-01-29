@@ -23,6 +23,12 @@ class Admin extends CI_Controller {
         $this->load->view('admin/dashboard');
         $this->load->view('admin/template/footer');
 	}
+    
+    public function logout ()
+    {
+        session_destroy();
+        redirect(base_url());
+    }
 
     public function config ()
     {

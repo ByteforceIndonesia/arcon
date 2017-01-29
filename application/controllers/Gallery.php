@@ -48,5 +48,19 @@ class Gallery extends MY_Controller {
         $this->load->view('template/footer', $this->data);
     }
     
+    public function project($uuid)
+    {
+        if($uuid == '')
+        {
+            redirect(base_url());
+        }else
+        {
+            $this->data['project'] = $this->project_model->get($uuid);
+            
+            $this->load->view('template/header', $this->data);
+            $this->load->view('frontpages/project', $this->data);
+            $this->load->view('template/footer', $this->data);
+        }
+    }
 }    
 ?>

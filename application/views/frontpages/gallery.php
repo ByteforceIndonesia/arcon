@@ -25,7 +25,7 @@
                 foreach($gallery as $count => $project): 
                 if($count > count($gallery)/2) break;
               ?>
-                <a href= "<?php echo base_url('project/' . $project->project_uuid) ?>">
+                <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
                     <div class= "ImagePack">
                         <span class="galleryImageTitle"><?php echo $project->name ?></span>
                         <img src="<?php echo base_url() . $project->images . '/freatured.jpg' ?>" alt="" class="smallImage" width = "100%">
