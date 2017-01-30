@@ -44,6 +44,49 @@ body
     background: transparent;
 }
 
+.wi-navigation-center{
+  width : 100%;
+  text-align : center;
+
+  flex-wrap: wrap ;
+  justify-content: space-around;
+}
+
+.wi-navigation-center a li{
+    padding-top : 24px;
+        padding-bottom : 24px;
+    width : 100%;
+    color : black;
+    list-style : none;    font-size : 2em;
+
+}
+
+
+
+.wi-navigation-center a {
+    width : 100%;
+    color : black;
+
+}
+.wi-logo-mob {
+
+
+}
+
+.wi-logo-mob
+{
+margin-top : 24px;
+margin-bottom : 24px;
+    width: 260px;
+    height: 42px;
+    background-image: url('../images/logotext.png');
+    background-position-y: 16px;
+    background-size: 260px;
+    background-repeat: no-repeat;
+list-style: None;
+text-decoration: none;
+}
+
 .wi-navigation-left {
   padding-left : 0px;
 }
@@ -81,6 +124,27 @@ body
     background-color: white;
     content: '';
     transition: all .2s ease-out;
+}
+
+
+
+.wi-navigation-right-Burger li
+{
+    float: right;
+    margin: 0 0;
+    margin-top: 14px;
+    margin-left: 28px;
+    list-style: None;
+    text-decoration: none;
+    font-size: 24px;
+}
+.wi-navigation-right-Burger a
+{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
 }
 
 .wnrBlack li:after{
@@ -235,6 +299,8 @@ body
   text-decoration : none;
 font-size : 18px;
 }
+
+
 .content-menu-links a:after{position : relative;
   position : relative;
   display: inline-block;
@@ -328,6 +394,7 @@ font-size : 18px;
     background-size: cover;
 }
 .marketingPhone li{
+  margin-bottom : 36px;
   margin-left : 0px;
   color : white;
   text-align : center;
@@ -340,6 +407,7 @@ font-size : 18px;
 }
 .marketingPhone{
   margin-left : 0px;
+  padding-left : 0px;
   list-style : none;
 }
 
@@ -435,7 +503,7 @@ background-image: none;
 }
 
 .Gallery{
-  height : 100%;
+  min-height : 100%;
 }
 
 .galleryResidence{
@@ -528,4 +596,67 @@ width: 100%;
 .galleryMenu:hover .galleryText:before
 {
 width: 100%;
+}
+.horizontal-center {
+  display: flex;
+
+  align-items: center;
+}
+
+
+.wi-navigation-mob{
+  position: fixed;
+  z-index : 10000;
+  width : 100%;
+  height: 100%;background-color: rgba(255,255,255,0.8);
+color : black;
+}
+
+@media screen and (max-width: 720px) {
+  .Gallery{
+    min-height : 200%;
+    background-color : transparent;
+  }
+  .galleryResidence{
+    position : relative;
+    float : left;
+      min-height : 100%;
+    width : 100%;
+    background-color : blue;
+    text-align : center;
+  }
+
+    .galleryComercial{
+      position : relative;
+      float : left;
+        min-height : 100%;
+      width : 100%;
+      background-color : blue;
+      text-align : center;
+    }
+
+
+
+    .contact-profile-picture img{position : relative;
+      margin-bottom : 15px;
+      width : 60%;
+      border-radius : 100%;
+    }
+
+
+
+    .home-slider-mob
+    {
+        position: fixed;
+        display: block;
+        margin-bottom : -10px;
+        width: 100%;
+        height : 100%;
+        background-color: rgba(255,255,255,0.6)!important;
+        background-size: cover;
+    }
+
+
+
+
 }

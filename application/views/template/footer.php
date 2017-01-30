@@ -1,14 +1,14 @@
  <!-- Parallax  -->
   <section class="parallax-window2" data-parallax="scroll" data-image-src="<?php echo $parallax_two?>"></section>
- 
+
  <!-- Team -->
   <section class="content-contacts" id="contact">
     <div class="container">
       <div class="col-lg-12">
 
-        <ul class="marketingPhone"><li  class="col-lg-1"></li>
+        <ul class="marketingPhone"><li  class="col-lg-1 hidden-sm hidden-xs"></li>
             <?php foreach ($team as $people): ?>
-                <li class="col-lg-2"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>"/></div>
+                <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>"/></div>
                     <span class="contact-name">
                         <?php echo $people->name ?>
                     </span>
@@ -74,38 +74,51 @@
 
 
   <script>
-  $(window).scroll(function() {
-   var hT = $('.wi-navigation').offset().top,
-       hH = $('.wi-navigation').outerHeight(),
-       wH = $(window).height(),
-       wS = $(this).scrollTop();
-   if (wS>= 100){
-     $('.wi-navigation').css("position", "fixed");
-     $('.wi-navigation').css("top", "0px");
-     $('.wi-navigation').css("bottom", "auto");
-    var a = (($('#paralax-home').innerHeight()-wS)/64)*255;
-          $('.wi-navigation').css("background-color", `rgba(255,255,255,${(wS-$('#paralax-home').innerHeight()+64)/64})`);
+     $('.wi-navigation-mob').css('display','none');
+
+          $('#navbarLink').click(function(){
+             $('.wi-navigation-mob').css('display','block');
+          });
+
+        $('.wi-navigation-mob').click(function(){
+           $('.wi-navigation-mob').css('display','none');
+        });
+           $('.wi-navigation-mob a').click(function(){
+              $('.wi-navigation-mob').css('opacity','0.5');
+           });
+
+           $(window).scroll(function() {
+            var hT = $('.wi-navigation').offset().top,
+                hH = $('.wi-navigation').outerHeight(),
+                wH = $(window).height(),
+                wS = $(this).scrollTop();
+            if (wS>= 100){
+              $('.wi-navigation').css("position", "fixed");
+              $('.wi-navigation').css("top", "0px");
+              $('.wi-navigation').css("bottom", "auto");
+             var a = (($('#paralax-home').innerHeight()-wS)/64)*255;
+                   $('.wi-navigation').css("background-color", `rgba(255,255,255,${(wS-$('#paralax-home').innerHeight()+64)/64})`);
 
 
-               //console.log(a);
-   }
-   if(wS < $('#paralax-home').innerHeight()-64){
-     $('.wi-navigation').css("position", "absolute");
-     $('.wi-navigation').css("top", "auto");
-     $('.wi-navigation').css("bottom", "0px");$('.wi-navigation a').css("color", `#fff`);
-    $('.wi-navigation-right').removeClass('wnrBlack');
+                        console.log(a);
+            }
+            if(wS < $('#paralax-home').innerHeight()-64){
+              $('.wi-navigation').css("position", "absolute");
+              $('.wi-navigation').css("top", "auto");
+              $('.wi-navigation').css("bottom", "0px");$('.wi-navigation a').css("color", `#fff`);
+             $('.wi-navigation-right').removeClass('wnrBlack');
 
-   }
+            }
 
-   if(wS > $('#paralax-home').innerHeight()-64){
-     $('.wi-navigation').css("position", "fixed");
-     $('.wi-navigation').css("top", "0px");
-     $('.wi-navigation').css("bottom", "auto");$('.wi-navigation a').css("color", `#000`);
-     $('.wi-navigation-right').find('li:after').css("background-color", "#000");
-    $('.wi-navigation-right').addClass('wnrBlack');
+            if(wS > $('#paralax-home').innerHeight()-64){
+              $('.wi-navigation').css("position", "fixed");
+              $('.wi-navigation').css("top", "0px");
+              $('.wi-navigation').css("bottom", "auto");$('.wi-navigation a').css("color", `#000`);
+              $('.wi-navigation-right').find('li:after').css("background-color", "#000");
+             $('.wi-navigation-right').addClass('wnrBlack');
 
-   }
-  });
+            }
+           });
 
 //$('message-text-area').autoResize();
 
