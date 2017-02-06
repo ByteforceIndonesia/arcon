@@ -11,8 +11,11 @@
     <!-- CSS -->
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/alpha.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/js/slick/slick.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/beta.css" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="<?php echo base_url() ?>assets/css/lity.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/js/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/js/slick/slick-theme.css"/>
 
 
 </head>
@@ -35,7 +38,6 @@
             </div>
         </nav>
   <!-- Parallax Slider -->
-  <section class="parallax-window" id="paralax-home"data-parallax="scroll" data-image-src="<?php echo $home_slider ?>"></section>
 
 
 
@@ -43,7 +45,7 @@
 
   <section class="home-slider">
 
-    <nav class ="wi-navigation">
+    <nav class ="wi-navigation" >
         <div class="container ">
             <div class="col-lg-12">
                 <ul class="pull-left wi-navigation-left">
@@ -65,3 +67,7 @@
     </nav>
 
   </section>
+
+
+<section style= "height : 50px;">
+</section>

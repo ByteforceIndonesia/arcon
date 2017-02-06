@@ -72,6 +72,8 @@
   <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url() ?>assets/js/parallax.js"></script>
 
+    <script src="<?php echo base_url() ?>assets/js/lity.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/slick/slick.js"></script>
 
   <script>
      $('.wi-navigation-mob').css('display','none');
@@ -119,6 +121,16 @@
 
             }
            });
+
+           $('#homeSliderParalax').slick({
+
+               arrows: true,
+             autoplay: true,
+             autoplaySpeed: 2000
+           });
+
+           $('.parallax-window').parallax({imageSrc: '<?php echo $home_slider ?>'});
+
 
 //$('message-text-area').autoResize();
 

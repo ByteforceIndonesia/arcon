@@ -17,10 +17,10 @@ class Project extends MY_Controller {
         }else
         {
             $this->data['project'] = $this->project_model->get($uuid);
-            
-            $this->load->view('template/header', $this->data);
+
+            $this->load->view('template/headerb', $this->data);
             $this->load->view('frontpages/project', $this->data);
-            $this->load->view('template/footer', $this->data);
+            $this->load->view('template/footerb', $this->data);
         }
     }
 

@@ -13,9 +13,9 @@ class Gallery extends MY_Controller {
         //Load all
         $this->data['gallery'] = $this->gallery_model->freatured();
 
-        $this->load->view('template/header', $this->data);
+        $this->load->view('template/headerb', $this->data);
         $this->load->view('frontpages/gallery', $this->data);
-        $this->load->view('template/footer', $this->data);
+        $this->load->view('template/footerb', $this->data);
     }
 
     public function residence ()
@@ -23,9 +23,9 @@ class Gallery extends MY_Controller {
         //Load all
         $this->data['gallery'] = $this->gallery_model->all('residence');
 
-        $this->load->view('template/header', $this->data);
+        $this->load->view('template/headerb', $this->data);
         $this->load->view('frontpages/gallery', $this->data);
-        $this->load->view('template/footer', $this->data);
+        $this->load->view('template/footerb', $this->data);
     }
 
     public function comercial ()
@@ -33,9 +33,9 @@ class Gallery extends MY_Controller {
         //Load all
         $this->data['gallery'] = $this->gallery_model->all('comercial');
 
-        $this->load->view('template/header', $this->data);
+        $this->load->view('template/headerb', $this->data);
         $this->load->view('frontpages/gallery', $this->data);
-        $this->load->view('template/footer', $this->data);
+        $this->load->view('template/footerb', $this->data);
     }
 
     public function others ()
@@ -43,11 +43,11 @@ class Gallery extends MY_Controller {
         //Load all
         $this->data['gallery'] = $this->gallery_model->all('others');
 
-        $this->load->view('template/header', $this->data);
+        $this->load->view('template/headerb', $this->data);
         $this->load->view('frontpages/gallery', $this->data);
-        $this->load->view('template/footer', $this->data);
+        $this->load->view('template/footerb', $this->data);
     }
-    
+
     public function project($uuid)
     {
         if($uuid == '')
@@ -56,11 +56,11 @@ class Gallery extends MY_Controller {
         }else
         {
             $this->data['project'] = $this->project_model->get($uuid);
-            
-            $this->load->view('template/header', $this->data);
+
+            $this->load->view('template/headerb', $this->data);
             $this->load->view('frontpages/project', $this->data);
-            $this->load->view('template/footer', $this->data);
+            $this->load->view('template/footerb', $this->data);
         }
     }
-}    
+}
 ?>
