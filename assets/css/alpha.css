@@ -10,6 +10,14 @@ body
     height: 100%;
     background-color: transparent;
 }
+
+.transparentClass{
+  opacity: 0;
+}
+.preload{
+  display : none;
+}
+
 .home-slider
 {
     position: relative;

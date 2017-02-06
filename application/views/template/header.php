@@ -35,7 +35,7 @@
             </div>
         </nav>
   <!-- Parallax Slider -->
-  <section class="parallax-window" id="paralax-home"data-parallax="scroll" data-image-src="<?php echo $home_slider ?>"></section>
+  <section class="parallax-window parallax-buskwak" id="paralax-home"data-parallax="scroll" data-image-src="#buskrak"></section>
 
 
 

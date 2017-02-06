@@ -102,7 +102,6 @@
                    $('.wi-navigation').css("background-color", `rgba(255,255,255,${(wS-$('#paralax-home').innerHeight()+64)/64})`);
 
 
-                        console.log(a);
             }
             if(wS < $('#paralax-home').innerHeight()-64){
               $('.wi-navigation').css("position", "absolute");
@@ -129,11 +128,47 @@
              autoplaySpeed: 2000
            });
 
-           $('.parallax-window').parallax({imageSrc: '<?php echo $home_slider ?>'});
+           $('.parallax-buskwak').parallax({imageSrc: '#buskwak'});
+           if($('.parallax-slider').attr('src')=="#buskwak"){
+             var parax = $('.parallax-slider');
+           }
+            $('.parallax-window').parallax({imageSrc: ''});
+                      console.log();
+            $('.parallax-slider').attr("src","assets/images/10.jpg");
+            var thisId=0;
+            $(function(){
+              //prepare Your data array with img urls
+              var dataArray=new Array();
+              dataArray[0]="assets/images/1.jpg";
+              dataArray[1]="assets/images/3.jpg";
+              dataArray[2]="assets/images/4.jpg";
+              dataArray[3]="assets/images/10.jpg";
+
+              //start with id=0 after 5 seconds
 
 
-//$('message-text-area').autoResize();
+              window.setInterval(function(){
 
+                      parax.addClass('transparentClass');
+                  setTimeout(function () {
+                        parax.attr('src',dataArray[thisId]);
+                  }, 400);
+                  setTimeout(function () {
+                    parax.removeClass('transparentClass');
+                  }, 400);
+
+                  thisId++; //increment data array id
+                  if (thisId==3) thisId=0; //repeat from start
+              },6000);
+          });
   </script>
+
+  <div class="preload">
+     <img src="assets/images/1.jpg" width="1" height="1" alt="Image 01" />
+     <img src="assets/images/3.jpg" width="1" height="1" alt="Image 02" />
+     <img src="assets/images/4.jpg" width="1" height="1" alt="Image 03" />
+     <img src="assets/images/10.jpg" width="1" height="1" alt="Image 03" />
+  </div>
+
 </body>
 </html>

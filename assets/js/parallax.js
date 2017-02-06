@@ -121,7 +121,7 @@
     if (slider.length == 0)
       this.$slider = $('<img />').prependTo(this.$mirror);
     else {
-      this.$slider = slider.prependTo(this.$mirror)
+        this.$slider = slider.prependTo(this.$mirror);
       sliderExisted = true;
     }
 
@@ -236,6 +236,7 @@
         transform: 'translate3d(0px, 0px, 0px)',
         visibility: this.visibility,
         top: this.mirrorTop - overScroll,
+        backgroundColor: '#333',
         left: this.mirrorLeft,
         height: this.boxHeight,
         width: this.boxWidth
@@ -244,6 +245,8 @@
       this.$slider.css({
         transform: 'translate3d(0px, 0px, 0px)',
         position: 'absolute',
+        transition: '0.2s opacity ease-out',
+        backgroundColor: 'black',
         top: this.offsetTop,
         left: this.offsetLeft,
         height: this.imageHeight,

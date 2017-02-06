@@ -135,33 +135,21 @@ class Admin extends CI_Controller {
                 )
             {
                 //Config for upload class
-                $config['upload_path']          = './assets/images/team/';
+                $config['upload_path']          = './assets/images/teams/';
                 $config['allowed_types']        = 'jpg';
                 $config['overwrite']            = TRUE;
 
-                $this->load->library('upload');
+                $this->load->library('upload', $config);
                 
-                //Store the array
-                $files = $_FILES;
-                
-                for($i = 0; $i < count($_FILES['image']['name']); $i++)
+                foreach($_FILES['image']['name'] as $count => $name)
                 {
-                    if(!empty($_FILES['image']['name'][$i]))
+                    $config['file_name']     = $count;
+                    
+                    if ( ! $this->upload->do_upload($name))
                     {
-                        //Tricks the system as if we're uploading one file
-                        $_FILES['img']['name']= $files['image']['name'][$count];
-                        $_FILES['img']['type']= $files['image']['type'][$count];
-                        $_FILES['img']['tmp_name']= $files['image']['tmp_name'][$count];
-                        $_FILES['img']['error']= $files['image']['error'][$count];
-                        $_FILES['img']['size']= $files['image']['size'][$count];
+                        $error = array('error' => $this->upload->display_errors());
 
-                        $config['file_name']     = $i+1;
-                        $this->upload->initialize($config);
-
-                        if ( !$this->upload->do_upload('img') )
-                        {
-                            print_r($this->upload->display_errors());
-                        }
+                        $this->load->view('upload_form', $error);
                     }
                 }
             }
@@ -194,7 +182,7 @@ class Admin extends CI_Controller {
         }
     }
     
-    public function project ($page = '')
+    public function project ()
     {
         $this->data['projects'] = $this->admin_model->get_projects();
         
@@ -211,19 +199,7 @@ class Admin extends CI_Controller {
             {
                 if($this->input->post())
                 {
-                    $uuid       = uniqid();
-                    $name       = $this->input->post('name');
-                    $desc       = $this->input->post('desc');
-                    $catagory   = $this->input->post('catagory');
-                    $name       = $this->input->post('name');
                     
-                    if($_FILES)
-                    {
-                        echo '<pre>';
-                        print_r($_FILES);
-                        echo '</pre>';
-                        exit;
-                    }
                 }else
                 {
                     //$this->load->view('admin/template/header', $this->data);
