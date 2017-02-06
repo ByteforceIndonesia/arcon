@@ -43,4 +43,14 @@ class Admin_model extends CI_Model
         return $this->db->get('projects')->result();
     }
     
+    public function insert_project($data)
+    {
+        return $this->db->insert('projects', $data);
+    }
+    
+    public function make_freatured($uuid)
+    {
+        return $this->db->insert('gallery', array('project_uuid' => $uuid, 'freatured' => 1));
+    }
+    
 }

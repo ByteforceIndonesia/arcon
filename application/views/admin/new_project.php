@@ -195,13 +195,35 @@
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
         <input type="text" class="form-control" placeholder="Username" name="username" autocomplete="off">
           </div>
-
-        <div class="input-group input-group-lg">
-          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-          <input type="password" class="form-control" placeholder="Password" name="password" autocomplete="off">
-        </div>
-
-        <button type="submit" class="float">Login</button>
+      
+      <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <select name="catagory" class="form-control">
+              <option value="residential">Residential</option>
+              <option value="comercial">Comercial</option>
+              <option value="others">Others</option>
+          </select>
+          </div>
+      
+      <div class="input-group input-group-lg">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <select name="freatured" class="form-control">
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+          </select>
+          </div>
+      
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="file" class="form-control" placeholder="Freatured Image" name="freatured" autocomplete="off">
+      </div>
+      
+      <div class="input-group input-group-lg">
+        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        <input type="file" class="form-control" placeholder="Images" name="data[]" autocomplete="off" multiple>
+      </div>
+      
+        <button type="submit" class="float">Make New Project</button>
     <?php echo form_close (); ?>
  		</div>
  </div>
