@@ -144,21 +144,21 @@ class Admin extends CI_Controller {
                 //Store the array
                 $files = $_FILES;
                 
-                foreach($_FILES['image']['name'] as $count => $name)
+                for($i = 0; $i < count($_FILES['image']['name']); $i++)
                 {
-                    if(!empty($name))
+                    if(!empty($_FILES['image']['name'][$i]))
                     {
                         //Tricks the system as if we're uploading one file
-                        $_FILES['image']['name']= $files['image']['name'][$count];
-                        $_FILES['image']['type']= $files['image']['type'][$count];
-                        $_FILES['image']['tmp_name']= $files['image']['tmp_name'][$count];
-                        $_FILES['image']['error']= $files['image']['error'][$count];
-                        $_FILES['image']['size']= $files['image']['size'][$count];
+                        $_FILES['img']['name']= $files['image']['name'][$count];
+                        $_FILES['img']['type']= $files['image']['type'][$count];
+                        $_FILES['img']['tmp_name']= $files['image']['tmp_name'][$count];
+                        $_FILES['img']['error']= $files['image']['error'][$count];
+                        $_FILES['img']['size']= $files['image']['size'][$count];
 
-                        $config['file_name']     = $count;
+                        $config['file_name']     = $i+1;
                         $this->upload->initialize($config);
 
-                        if ( !$this->upload->do_upload() )
+                        if ( !$this->upload->do_upload('img') )
                         {
                             print_r($this->upload->display_errors());
                         }
