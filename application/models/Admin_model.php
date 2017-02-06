@@ -53,4 +53,10 @@ class Admin_model extends CI_Model
         return $this->db->insert('gallery', array('project_uuid' => $uuid, 'freatured' => 1));
     }
     
+    //Config
+    public function get_config()
+    {
+        return $this->db->get('config')->result();
+    }
+    
 }

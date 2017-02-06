@@ -141,15 +141,39 @@ class Admin extends CI_Controller {
 
                 $this->load->library('upload', $config);
                 
-                foreach($_FILES['image']['name'] as $count => $name)
+                //Data File Uploads
+                if($_FILES['image'])
                 {
-                    $config['file_name']     = $count;
-                    
-                    if ( ! $this->upload->do_upload($name))
-                    {
-                        $error = array('error' => $this->upload->display_errors());
+                    //Config for upload class
+                    $config['upload_path']          = './' . $data['datas'];
+                    $config['allowed_types']        = 'jpg';
+                    $config['overwrite']            = TRUE;
 
-                        $this->load->view('upload_form', $error);
+                    $this->load->library('upload');
+
+                    //Store the array
+                    $files = $_FILES;
+
+                    for($i = 0; $i < count($_FILES['images']['name']); $i++)
+                    {
+                        if(!empty($_FILES['images']['name'][$i]))
+                        {
+                            //Tricks the system as if we're uploading one file
+                            $_FILES['img']['name']= $files['images']['name'][$i];
+                            $_FILES['img']['type']= $files['images']['type'][$i];
+                            $_FILES['img']['tmp_name']= $files['images']['tmp_name'][$i];
+                            $_FILES['img']['error']= $files['images']['error'][$i];
+                            $_FILES['img']['size']= $files['images']['size'][$i];
+                            
+                            $config['file_name']    = $i+1;
+                            $this->upload->initialize($config);
+
+                            if ( !$this->upload->do_upload('img') )
+                            {
+                                print_r($this->upload->display_errors());
+                                exit;
+                            }
+                        }
                     }
                 }
             }
@@ -174,7 +198,11 @@ class Admin extends CI_Controller {
             
         }else
         {
-            $this->data['config'] = $this->admin_model->get_teams();
+            $this->data['config'] = $this->admin_model->get_config();
+            
+//            echo'<pre>';
+//            print_r($this->data['config']);
+//            exit;
             
             //$this->load->view('admin/template/header', $this->data);
             $this->load->view('admin/config', $this->data);
@@ -182,7 +210,7 @@ class Admin extends CI_Controller {
         }
     }
     
-    public function project ()
+    public function project ($page = '')
     {
         $this->data['projects'] = $this->admin_model->get_projects();
         
@@ -199,16 +227,19 @@ class Admin extends CI_Controller {
             {
                 if($this->input->post())
                 {
+                    //Put data in array
                     $data = array (
                         
                         'project_uuid'      => uniqid(),
                         'name'                => $this->input->post('name'),
                         'description'         => $this->input->post('desc'),
-                        'details'            => $this->input->post('catagory'),
-                        'images'              => './assets/images/projects/' . $this->input->post('catagory') . '/' . uniqid() . '/freatured',
-                        'datas'               => './assets/images/projects/' . $this->input->post('catagory') . '/' . uniqid()
+                        'details'            => $this->input->post('catagory')
                         
                         );
+                    
+                    $data['images'] = 'assets/images/projects/' . $this->input->post('catagory') . '/' . $data['project_uuid'] . '/freatured';
+                    
+                    $data['datas'] = 'assets/images/projects/' . $this->input->post('catagory') . '/' . $data['project_uuid'];
                     
                     //Insert
                     if(!$this->admin_model->insert_project($data))
@@ -223,18 +254,27 @@ class Admin extends CI_Controller {
                     }
                     
                     //Make directory
-                    if(mkdir('./assets/images/projects/' . $this->input->post('catagory') . '/' . uniqid() . '/freatured'))
+                    if(!mkdir('./assets/images/projects/' . $this->input->post('catagory') . '/' . $data['project_uuid']))
                     {
-                        return 'error mkdir 1';
+                        echo 'error mkdir 1';
+                        exit;
+                    }else
+                    {
+                        if(!mkdir('./assets/images/projects/' . $this->input->post('catagory') . '/' . $data['project_uuid'] . '/freatured'))
+                        {  
+                            echo 'error mkdir 1';
+                            exit;
+                        }
                     }
                     
                     //Freatured Pic Upload
                     if($_FILES['freatured'])
                     {
                         //Config for upload class
-                        $config['upload_path']          = $data['images'];
+                        $config['upload_path']          = './' . $data['images'];
                         $config['allowed_types']        = 'jpg';
                         $config['overwrite']            = TRUE;
+                        $config['file_name']            = 'freatured.jpg';
 
                         $this->load->library('upload', $config);
                         if(!$this->upload->do_upload('freatured'))
@@ -248,7 +288,7 @@ class Admin extends CI_Controller {
                     if($_FILES['data'])
                     {
                         //Config for upload class
-                        $config['upload_path']          = $data['datas'];
+                        $config['upload_path']          = './' . $data['datas'];
                         $config['allowed_types']        = 'jpg|png|docx|pdf';
                         $config['overwrite']            = TRUE;
 
@@ -262,11 +302,11 @@ class Admin extends CI_Controller {
                             if(!empty($_FILES['data']['name'][$i]))
                             {
                                 //Tricks the system as if we're uploading one file
-                                $_FILES['img']['name']= $files['data']['name'][$count];
-                                $_FILES['img']['type']= $files['data']['type'][$count];
-                                $_FILES['img']['tmp_name']= $files['data']['tmp_name'][$count];
-                                $_FILES['img']['error']= $files['data']['error'][$count];
-                                $_FILES['img']['size']= $files['data']['size'][$count];
+                                $_FILES['img']['name']= $files['data']['name'][$i];
+                                $_FILES['img']['type']= $files['data']['type'][$i];
+                                $_FILES['img']['tmp_name']= $files['data']['tmp_name'][$i];
+                                $_FILES['img']['error']= $files['data']['error'][$i];
+                                $_FILES['img']['size']= $files['data']['size'][$i];
                                 
                                 $this->upload->initialize($config);
 
@@ -278,6 +318,10 @@ class Admin extends CI_Controller {
                             }
                         }
                     }
+                    
+                    $this->session->set_flashdata('success', 'Success Adding New Project');
+                    $this->index(); 
+                    
                 }else
                 {
                     //$this->load->view('admin/template/header', $this->data);

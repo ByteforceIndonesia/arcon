@@ -29,7 +29,12 @@
         </li>
         
         <li>
+            <a href="<?php echo base_url('admin/config') ?>">Config</a>
+        </li>
+        
+        <li>
             <a href="<?php echo base_url('admin/logout') ?>">Logout</a>
         </li>
+        
     </ul>
 </body>

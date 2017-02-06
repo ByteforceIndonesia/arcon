@@ -184,7 +184,7 @@
   <div class="heading">
     <h2>New Project</h2>
     
-    <?php echo form_open('admin/project/new') ?>
+    <?php echo form_open_multipart('admin/project/new') ?>
       
       <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -193,7 +193,7 @@
       
       <div class="input-group input-group-lg">
         <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <input type="text" class="form-control" placeholder="Username" name="username" autocomplete="off">
+        <input type="text" class="form-control" placeholder="Desc" name="desc" autocomplete="off">
           </div>
       
       <div class="input-group input-group-lg">
