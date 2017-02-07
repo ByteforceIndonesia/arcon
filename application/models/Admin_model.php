@@ -59,4 +59,138 @@ class Admin_model extends CI_Model
         return $this->db->get('config')->result();
     }
     
+    public function set_config($data)
+    {
+        foreach($data as $key => $value)
+        {
+            if($key == 'office_two')
+            {
+                $this->db->set('value_two', $value);
+                $this->db->where('config_name', $key);
+                $this->db->update('config');
+                continue;
+            }
+            
+            $this->db->set('value_one', $value);
+            $this->db->where('config_name', $key);
+            $this->db->update('config');
+        }
+    }
+    
+    public function set_company_logo ()
+    {
+        //If user Upload files
+        if(!empty($_FILES['company_logo']))
+        {
+            $config['upload_path']          = './assets/images/';
+            $config['allowed_types']        = 'png';
+            $config['max_size']             = 7000;
+            $config['overwrite']            = TRUE;
+            $config['file_name']            = 'logo.png';
+
+            $this->load->library('upload', $config);
+
+            if ( ! $this->upload->do_upload('company_logo'))
+            {
+                    $error = array('error' => $this->upload->display_errors());
+
+                    $errors = array(
+
+                        'error' => 'Error Updating About Us (Err:002a)',
+                        'file'  => $error
+
+                    );
+
+                    $this->session->set_flashdata($errors);
+                    return false;
+            }
+        }
+    }
+    
+    public function set_home_sliders ()
+    {
+        //If user Upload files
+        if(!empty($_FILES['home_slider']))
+        {
+            $config['upload_path']          = './assets/images/';
+            $config['allowed_types']        = 'jpg';
+            $config['max_size']             = 7000;
+            $config['overwrite']            = TRUE;
+            $config['file_name']            = 'home_slider.jpg';
+
+            $this->load->library('upload', $config);
+
+            if ( ! $this->upload->do_upload('home_slider'))
+            {
+                    $error = array('error' => $this->upload->display_errors());
+
+                    $errors = array(
+
+                        'error' => 'Error Updating About Us (Err:002a)',
+                        'file'  => $error
+
+                    );
+
+                    $this->session->set_flashdata($errors);
+                    return false;
+            }
+        }
+    }
+    
+    public function set_gallery_banners ()
+    {
+        //If user Upload files
+        if(!empty($_FILES['banner_residential']))
+        {
+            $config['upload_path']          = './assets/images/';
+            $config['allowed_types']        = 'jpg';
+            $config['max_size']             = 7000;
+            $config['overwrite']            = TRUE;
+            $config['file_name']            = 'home_slider.jpg';
+
+            $this->load->library('upload', $config);
+
+            if ( ! $this->upload->do_upload('home_slider'))
+            {
+                    $error = array('error' => $this->upload->display_errors());
+
+                    $errors = array(
+
+                        'error' => 'Error Updating About Us (Err:002a)',
+                        'file'  => $error
+
+                    );
+
+                    $this->session->set_flashdata($errors);
+                    return false;
+            }
+        }
+        
+        if(!empty($_FILES['banner_comercial']))
+        {
+            $config['upload_path']          = './assets/images/';
+            $config['allowed_types']        = 'jpg';
+            $config['max_size']             = 7000;
+            $config['overwrite']            = TRUE;
+            $config['file_name']            = 'home_slider.jpg';
+
+            $this->load->library('upload', $config);
+
+            if ( ! $this->upload->do_upload('home_slider'))
+            {
+                    $error = array('error' => $this->upload->display_errors());
+
+                    $errors = array(
+
+                        'error' => 'Error Updating About Us (Err:002a)',
+                        'file'  => $error
+
+                    );
+
+                    $this->session->set_flashdata($errors);
+                    return false;
+            }
+        }
+    }
+    
 }

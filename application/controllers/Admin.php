@@ -195,14 +195,26 @@ class Admin extends CI_Controller {
     {
         if($this->input->post())
         {
+            $data = array
+                (
+                
+                    'page_title'    => $this->input->post('page_title'),
+                    'office_one'    => $this->input->post('office_one'),
+                    'office_two'    => $this->input->post('office_two'),
+                    'contact_us'    => $this->input->post('contact_us')
+                    
+                    
+                );
+            
+            $this->admin_model->set_config($data);
+            
+            $this->admin_model->set_company_logo();
+            $this->admin_model->set_home_slider();
+            $this->admin_model->set_gallery_banners();
             
         }else
         {
             $this->data['config'] = $this->admin_model->get_config();
-            
-//            echo'<pre>';
-//            print_r($this->data['config']);
-//            exit;
             
             //$this->load->view('admin/template/header', $this->data);
             $this->load->view('admin/config', $this->data);
