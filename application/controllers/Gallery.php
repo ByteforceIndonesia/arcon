@@ -31,7 +31,7 @@ class Gallery extends MY_Controller {
     public function comercial ()
     {
         //Load all
-        $this->data['gallery'] = $this->gallery_model->all('comercial');
+        $this->data['gallery'] = $this->gallery_model->all('commercial');
 
         $this->load->view('template/headerb', $this->data);
         $this->load->view('frontpages/gallery', $this->data);

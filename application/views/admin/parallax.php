@@ -1,18 +1,20 @@
 <?php echo form_open_multipart(base_url('admin/parallax')) ?>
 
-<h4 class="danger">upload in jpg</h4>
+<p class="alert alert-warning">Please upload in jpg.</p>
 
 <?php foreach($parallaxes as $count => $parallax): ?>
 
-<?php echo $parallax->name ?> : <input type="file" name="parallax[]">
-<img src="<?php echo base_url() . $parallax->link; ?>" width="100px">
-
+<div class="input-group">
+    <span class="input-group-addon"><?php echo $parallax->name ?></span>
+    <input type="file" name="parallax[]" class="form-control">
+    <img src="<?php echo base_url() . $parallax->link; ?>" width="100px" height="100px">
+</div>
 <br>
 
 <? endforeach; ?>
 
 <br>
 
-<input type="submit">
+<input type="submit" class="btn btn-primary">
 
 <?php echo form_close() ?>

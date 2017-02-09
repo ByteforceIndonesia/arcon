@@ -1,7 +1,7 @@
 <html>
 <head>
 
-    <title>Arcon Indonesia || Admin</title>
+    <title><?php echo $page_title ?></title>
     
 <style>
 body {
@@ -68,6 +68,12 @@ height : 100%;
             </li>
         </a>
         
+        <a href="<?php echo base_url('admin/parallax') ?>">
+            <li>
+                Parallax Settings
+            </li>
+        </a>
+        
         <a href="<?php echo base_url('admin/aboutus') ?>">
             <li>
                 Edit About Us
@@ -82,13 +88,7 @@ height : 100%;
         
         <a href="<?php echo base_url('admin/project') ?>">
             <li>
-                Edit Projects
-            </li>
-        </a>
-        
-        <a href="<?php echo base_url('admin/parallax') ?>">
-            <li>
-                Parallax Settings
+                Projects
             </li>
         </a>
         

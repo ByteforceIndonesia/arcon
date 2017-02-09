@@ -40,12 +40,12 @@
 <section class="Gallery" id="gallery">
   <a href = "<?php echo base_url('gallery/residence') ?>">
     <div class="galleryResidence galleryMenu" style="background-image : url('<?php echo base_url() . $gallery_banner_residence ?>');"><div class="galleryMargin"></div>
-      <div class="galleryText">RESIDENCE</div>
+      <div class="galleryText">RESIDENTIAL</div>
     </div>
   </a>
   <a href = "<?php echo base_url('gallery/comercial') ?>">
     <div class="galleryComercial galleryMenu" style="background-image : url('<?php echo base_url() . $gallery_banner_comercial ?>');"><div class="galleryMargin"></div>
-      <div class="galleryText">COMERCIAL</div>
+      <div class="galleryText">COMMERCIAL</div>
     </div>
   </a>
 </section>

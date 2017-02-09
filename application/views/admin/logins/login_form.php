@@ -12,7 +12,6 @@
             }
 
             html {
-            background: url(https://dl.dropboxusercontent.com/u/159328383/background.jpg) no-repeat center center fixed;
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
@@ -29,6 +28,7 @@
 
             #wrapper
             {
+                background:#f4f4f4;
                 height:100%;
                 width:100%;
                 position:absolute;
@@ -50,14 +50,14 @@
             .login .heading h2 {
             font-size: 3em;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(0, 0, 0, 0.7);
             display: inline-block;
             padding-bottom: 5px;
             text-shadow: 1px 1px 3px #23203b;
             }
             .login form .input-group {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
             }
             .login form .input-group:last-of-type {
             border-top: none;
@@ -69,7 +69,7 @@
             }
             .login form .input-group span i {
             font-size: 1.5em;
-            color: rgba(255, 255, 255, 0.2);
+            color: rgba(0, 0, 0, 0.2);
             }
             .login form input.form-control {
             display: block;
@@ -91,18 +91,16 @@
             }
             .login form button {
             margin-top: 20px;
-            background: #27AE60;
             border: none;
             font-size: 1.6em;
             font-weight: 300;
             padding: 5px 0;
             width: 100%;
             border-radius: 3px;
-            color: #b3eecc;
-            border-bottom: 4px solid #1e8449;
+            color: #fff;
+            border-bottom: 4px solid #357ebd;
             }
             .login form button:hover {
-            background: #30b166;
             -webkit-animation: hop 1s;
             animation: hop 1s;
             }
@@ -201,7 +199,7 @@
           <input type="password" class="form-control" placeholder="Password" name="password" autocomplete="off">
         </div>
 
-        <button type="submit" class="float">Login</button>
+        <button type="submit" class="float btn btn-primary">Login</button>
     <?php echo form_close (); ?>
  		</div>
  </div>
