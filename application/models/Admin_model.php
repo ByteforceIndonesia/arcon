@@ -43,6 +43,16 @@ class Admin_model extends CI_Model
         return $this->db->get('projects')->result();
     }
     
+    public function get_project ($uuid)
+    {
+        return $this->db->get_where('projects', array('project_uuid' => $uuid))->row();
+    }
+    
+    public function get_project_gallery ($uuid)
+    {
+        return $this->db->get_where('gallery', array('project_uuid' => $uuid))->row();
+    }
+    
     public function insert_project($data)
     {
         return $this->db->insert('projects', $data);
@@ -51,6 +61,16 @@ class Admin_model extends CI_Model
     public function make_freatured($uuid)
     {
         return $this->db->insert('gallery', array('project_uuid' => $uuid, 'freatured' => 1));
+    }
+    
+    public function delete_gallery($uuid)
+    {
+        return $this->db->delete('gallery', array('project_uuid' => $uuid));
+    }
+    
+    public function delete_project($uuid)
+    {
+        return $this->db->delete('projects', array('project_uuid' => $uuid));
     }
     
     //Config
@@ -77,120 +97,10 @@ class Admin_model extends CI_Model
         }
     }
     
-    public function set_company_logo ()
+    //Parallax
+    public function get_parallax ()
     {
-        //If user Upload files
-        if(!empty($_FILES['company_logo']))
-        {
-            $config['upload_path']          = './assets/images/';
-            $config['allowed_types']        = 'png';
-            $config['max_size']             = 7000;
-            $config['overwrite']            = TRUE;
-            $config['file_name']            = 'logo.png';
-
-            $this->load->library('upload', $config);
-
-            if ( ! $this->upload->do_upload('company_logo'))
-            {
-                    $error = array('error' => $this->upload->display_errors());
-
-                    $errors = array(
-
-                        'error' => 'Error Updating About Us (Err:002a)',
-                        'file'  => $error
-
-                    );
-
-                    $this->session->set_flashdata($errors);
-                    return false;
-            }
-        }
-    }
-    
-    public function set_home_sliders ()
-    {
-        //If user Upload files
-        if(!empty($_FILES['home_slider']))
-        {
-            $config['upload_path']          = './assets/images/';
-            $config['allowed_types']        = 'jpg';
-            $config['max_size']             = 7000;
-            $config['overwrite']            = TRUE;
-            $config['file_name']            = 'home_slider.jpg';
-
-            $this->load->library('upload', $config);
-
-            if ( ! $this->upload->do_upload('home_slider'))
-            {
-                    $error = array('error' => $this->upload->display_errors());
-
-                    $errors = array(
-
-                        'error' => 'Error Updating About Us (Err:002a)',
-                        'file'  => $error
-
-                    );
-
-                    $this->session->set_flashdata($errors);
-                    return false;
-            }
-        }
-    }
-    
-    public function set_gallery_banners ()
-    {
-        //If user Upload files
-        if(!empty($_FILES['banner_residential']))
-        {
-            $config['upload_path']          = './assets/images/';
-            $config['allowed_types']        = 'jpg';
-            $config['max_size']             = 7000;
-            $config['overwrite']            = TRUE;
-            $config['file_name']            = 'home_slider.jpg';
-
-            $this->load->library('upload', $config);
-
-            if ( ! $this->upload->do_upload('home_slider'))
-            {
-                    $error = array('error' => $this->upload->display_errors());
-
-                    $errors = array(
-
-                        'error' => 'Error Updating About Us (Err:002a)',
-                        'file'  => $error
-
-                    );
-
-                    $this->session->set_flashdata($errors);
-                    return false;
-            }
-        }
-        
-        if(!empty($_FILES['banner_comercial']))
-        {
-            $config['upload_path']          = './assets/images/';
-            $config['allowed_types']        = 'jpg';
-            $config['max_size']             = 7000;
-            $config['overwrite']            = TRUE;
-            $config['file_name']            = 'home_slider.jpg';
-
-            $this->load->library('upload', $config);
-
-            if ( ! $this->upload->do_upload('home_slider'))
-            {
-                    $error = array('error' => $this->upload->display_errors());
-
-                    $errors = array(
-
-                        'error' => 'Error Updating About Us (Err:002a)',
-                        'file'  => $error
-
-                    );
-
-                    $this->session->set_flashdata($errors);
-                    return false;
-            }
-        }
+        return $this->db->get('parallax')->result();
     }
     
 }

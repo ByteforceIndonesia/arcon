@@ -2,7 +2,7 @@
   <div class="container">
     <div class="col-lg-3">
       <!-- Logo -->
-      <img src="<?php echo $company_logo ?>" alt="" class="logo-content">
+      <center><img src="<?php echo $company_logo ?>" alt="" class="logo-content" style="max-width:255px;"></center>
 
       <!-- About -->
       <div class="content-menu-line"></div>
@@ -68,18 +68,20 @@
           <p>We offer 3 kinds of service including : construction, interior, and renovation.</p>
         </ul>
       </div>
+        <br><br>
       <div class="col-lg-9 imageContainer">
 
         <?php $counter = 0; foreach($wedo as $what): $counter++;?>
         <div class="">
           <div class="image">
             <div class="col-lg-4 serviceType">
-              <h3 class="col-lg-12 wwdTitle"><center><?php echo $counter . '. ' . $what->name; ?></center></h3>
+              <h2 class="col-lg-12 wwdTitle"><?php echo $counter . '. ' . $what->name; ?></h2>
               <img src="<?php echo base_url() . $what->link; ?>" alt="" class="" width = "100%">
               <ul class="serviceList">
                 <?php echo $what->text; ?>
               </ul>
             </div>
+            <br>
         <?php endforeach;?>
           </div>
         </div>

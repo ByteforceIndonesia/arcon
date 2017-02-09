@@ -1,40 +1,35 @@
-<body>
-    
+
+<h1>Dashboard</h1>
+<hr width = "100%">
+
     <?php 
         if($this->session->flashdata('error'))
-        {
-            echo $this->session->flashdata('error');
-        }else if($this->session->flashdata('file'))
-        {
-            print_r ($this->session->flashdata('file'));
-        }else if($this->session->flashdata('success'))
-        {
-            echo $this->session->flashdata('success');
-        }
+        { ?>
+            <div class="alert alert-danger">
+            <?php echo $this->session->flashdata('error'); ?>
+            </div>
+          <?php
+        } 
     ?>
-    
-    <ul>
-        <li>
-            <a href="<?php echo base_url('admin/aboutus') ?>">Edit About Us</a>
-        </li>
-        
-        
-        <li>
-            <a href="<?php echo base_url('admin/team') ?>">Edit Teams</a>
-        </li>
-        
-        
-        <li>
-            <a href="<?php echo base_url('admin/project') ?>">Edit Projects</a>
-        </li>
-        
-        <li>
-            <a href="<?php echo base_url('admin/config') ?>">Config</a>
-        </li>
-        
-        <li>
-            <a href="<?php echo base_url('admin/logout') ?>">Logout</a>
-        </li>
-        
-    </ul>
-</body>
+
+    <?php 
+        if($this->session->flashdata('success'))
+        {
+            ?>
+            <div class="alert alert-success">
+            <?php echo $this->session->flashdata('success'); ?>
+            </div>
+          <?php
+        } 
+    ?>
+
+    <?php 
+        if($this->session->flashdata('file'))
+        {
+            ?>
+            <div class="alert alert-warning">
+            <?php echo $this->session->flashdata('file'); ?>
+            </div>
+          <?php
+        } 
+    ?>

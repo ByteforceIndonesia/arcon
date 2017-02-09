@@ -15,12 +15,12 @@
       </ul>
     </div>
     <div class="col-lg-9 imageContainer">
-
       <div class="">
           <div class="col-lg-12">
           <div class="image">
             <div class="col-lg-12">
               <div class="col-lg-6 nopadding-left">
+      <br><br>
               <?php 
                 foreach($gallery as $count => $project): 
                 if($count > count($gallery)/2) break;
@@ -28,7 +28,7 @@
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
                     <div class= "ImagePack">
                         <span class="galleryImageTitle"><?php echo $project->name ?></span>
-                        <img src="<?php echo base_url() . $project->images . '/freatured.jpg' ?>" alt="" class="smallImage" width = "100%">
+                        <img src="<?php echo base_url() . $project->images ?>" alt="" class="smallImage" width = "100%">
                     </div>
                 </a>
                 <?php endforeach; ?>

@@ -28,8 +28,8 @@
 
             </div>
               <div class= "ImagePackBig">
-                <a href="<?php echo base_url() . $project->images . '/freatured.jpg' ?>" data-lity data-lity-desc="">
-                <img src="<?php echo base_url() . $project->images . '/freatured.jpg' ?>" alt="" class="smallImage" width = "100%">
+                <a href="<?php echo base_url() . $project->images ?>" data-lity data-lity-desc="">
+                <img src="<?php echo base_url() . $project->images ?>" alt="" class="smallImage" width = "100%">
               </a>
                   </div>
 

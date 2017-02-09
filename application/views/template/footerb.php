@@ -35,18 +35,25 @@
    <div class="container">
      <div class="col-lg-3">
 
-         <img src="<?php echo $company_logo ?>" alt="" class="logo-footer">
+         <center><img src="<?php echo $company_logo ?>" alt="" style="max-width:255px;" class="logo-footer"></center>
+          <br>
      </div>
      <div class="col-lg-9">
        <div class="col-lg-6">
-         <p class="col-lg-12">
-           <?php echo $offices->value_one; ?>
-         </p>
-
-         <p class="col-lg-12">
-           <?php echo $offices->value_two; ?>
-         </p>
-       </div>
+          <p class="col-lg-12">
+            Head Office & Studio : <br>
+              <span style="padding-top:1em;">
+                  <?php echo $offices->value_one; ?>
+              </span>
+          </p>
+<br>
+          <p class="col-lg-12">
+            Workshop :<br>
+              <span style="padding-top:1em;">
+                  <?php echo $offices->value_two; ?>
+              </span>
+          </p>
+        </div>
 
 <div class="col-lg-6">
  <p><?php echo $contact_us ?></p>
@@ -73,6 +80,22 @@
  <script src="<?php echo base_url() ?>assets/js/parallax.js"></script>
  <script src="<?php echo base_url() ?>assets/js/lity.js"></script>
 
+<!-- Disable right click -->
+<!--
+<script type="text/javascript">
+$(document).ready(function () {
+    //Disable cut copy paste
+    $('body').bind('cut copy paste', function (e) {
+        e.preventDefault();
+    });
+   
+    //Disable mouse right click
+    $("body").on("contextmenu",function(e){
+        return false;
+    });
+});
+</script>
+-->
 
  <script>
     $('.wi-navigation-mob').css('display','none');

@@ -35,19 +35,26 @@
     <div class="container">
       <div class="col-lg-3">
 
-          <img src="<?php echo $company_logo ?>" alt="" class="logo-footer">
+          <center><img src="<?php echo $company_logo ?>" alt="" style="max-width:255px;" class="logo-footer"></center>
+          <br>
       </div>
       <div class="col-lg-9">
         <div class="col-lg-6">
           <p class="col-lg-12">
-            <?php echo $offices->value_one; ?>
+            Head Office & Studio : <br>
+              <span style="padding-top:1em;">
+                  <?php echo $offices->value_one; ?>
+              </span>
           </p>
-
+<br>
           <p class="col-lg-12">
-            <?php echo $offices->value_two; ?>
+            Workshop :<br>
+              <span style="padding-top:1em;">
+                  <?php echo $offices->value_two; ?>
+              </span>
           </p>
         </div>
-
+          
 <div class="col-lg-6">
   <p><?php echo $contact_us ?></p>
 
@@ -74,6 +81,23 @@
 
     <script src="<?php echo base_url() ?>assets/js/lity.js"></script>
     <script src="<?php echo base_url() ?>assets/js/slick/slick.js"></script>
+
+<!-- Disable right click -->
+<!--
+<script type="text/javascript">
+$(document).ready(function () {
+    //Disable cut copy paste
+    $('body').bind('cut copy paste', function (e) {
+        e.preventDefault();
+    });
+   
+    //Disable mouse right click
+    $("body").on("contextmenu",function(e){
+        return false;
+    });
+});
+</script>
+-->
 
   <script>
      $('.wi-navigation-mob').css('display','none');
@@ -133,16 +157,16 @@
              var parax = $('.parallax-slider');
            }
             $('.parallax-window').parallax({imageSrc: ''});
-                      console.log();
+                      //console.log();
             $('.parallax-slider').attr("src","assets/images/10.jpg");
             var thisId=0;
             $(function(){
               //prepare Your data array with img urls
               var dataArray=new Array();
-              dataArray[0]="assets/images/1.jpg";
-              dataArray[1]="assets/images/3.jpg";
-              dataArray[2]="assets/images/4.jpg";
-              dataArray[3]="assets/images/10.jpg";
+              dataArray[0]="assets/images/slider/1.jpg";
+              dataArray[1]="assets/images/slider/2.jpg";
+              dataArray[2]="assets/images/slider/3.jpg";
+              dataArray[3]="assets/images/slider/4.jpg";
 
               //start with id=0 after 5 seconds
 
@@ -164,10 +188,10 @@
   </script>
 
   <div class="preload">
-     <img src="assets/images/1.jpg" width="1" height="1" alt="Image 01" />
-     <img src="assets/images/3.jpg" width="1" height="1" alt="Image 02" />
-     <img src="assets/images/4.jpg" width="1" height="1" alt="Image 03" />
-     <img src="assets/images/10.jpg" width="1" height="1" alt="Image 03" />
+     <img src="assets/images/slider/1.jpg" width="1" height="1" alt="Image 01" />
+     <img src="assets/images/slider/2.jpg" width="1" height="1" alt="Image 02" />
+     <img src="assets/images/slider/3.jpg" width="1" height="1" alt="Image 03" />
+     <img src="assets/images/slider/4.jpg" width="1" height="1" alt="Image 03" />
   </div>
 
 </body>

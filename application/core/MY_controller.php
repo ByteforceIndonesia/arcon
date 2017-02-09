@@ -18,7 +18,6 @@ class MY_Controller extends CI_Controller
 		$this->data['parallax_three'] 					= base_url() . $this->config_model->parallax('three')->link;
 
 		//Standard Config
-		$this->data['home_slider'] 		    = base_url() . $this->config_model->home_slider()->value_one;
 		$this->data['company_logo'] 	    = base_url() . $this->config_model->company_logo()->value_one;
 
         //Team Members
