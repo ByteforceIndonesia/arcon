@@ -426,7 +426,6 @@ font-size : 18px;
 
 .contact-profile-picture img{position : relative;
   margin-bottom : 15px;
-  width : 90%;
   border-radius : 100%;
 }
 .contact-form input:focus{

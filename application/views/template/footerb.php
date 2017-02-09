@@ -8,7 +8,7 @@
 
        <ul class="marketingPhone"><li  class="col-lg-1 hidden-sm hidden-xs"></li>
            <?php foreach ($team as $people): ?>
-               <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>"/></div>
+               <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div>
                    <span class="contact-name">
                        <?php echo $people->name ?>
                    </span>
