@@ -15,28 +15,23 @@
       </ul>
     </div>
     <div class="col-lg-9 imageContainer">
-
-      <div class="">
+      <div>
           <div class="col-lg-12 contentProduct">
-
             <div class="galleryTitle">
-                <span class="productPageTitle">
-                    <h2>
-                        <?php echo $project->name ?></span><br><hr class = "productPageLine">
-                    </h2>
+                        <h2><?php echo $project->name ?></h2>
+                        <hr class = "productPageLine">
                 <span class="productPageAlamat"><?php echo $project->description ?></span><br><br>
-
+                    
             </div>
               <div class= "ImagePackBig">
-                <a href="<?php echo base_url() . $project->images ?>" data-lity data-lity-desc="">
-                <img src="<?php echo base_url() . $project->images ?>" alt="" class="smallImage" width = "100%">
-              </a>
+              <center>
+                  <img src="<?php echo base_url() . $project->images ?>" alt="" class="smallImage" width = "100%">
+              </center>
                   </div>
 
               </div>
-
-
           </div>
+        
           <div class="image">
             <div class="col-lg-12">
                 
@@ -48,11 +43,11 @@
                     foreach($images as $count => $image):
                     if($count > count($images)/2)break;
                   ?>
-                        <a href="<?php echo base_url() . $image ?>" data-lity data-lity-desc="">
-                        <div class= "ImagePack">
+                    <center>    
+                    <div class= "ImagePack">
                           <img src="<?php echo base_url() . $image ?>" alt="" class="smallImage" width = "100%">
                         </div>
-                        </a>
+                  </center>
                  <?php
                     endforeach;
                   ?>
