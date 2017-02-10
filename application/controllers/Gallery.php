@@ -18,7 +18,7 @@ class Gallery extends MY_Controller {
         $this->load->view('template/footerb', $this->data);
     }
 
-    public function residence ()
+    public function residential ()
     {
         //Load all
         $this->data['gallery'] = $this->gallery_model->all('residential');

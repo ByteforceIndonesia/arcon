@@ -1,3 +1,25 @@
+@media screen and (max-width: 380px) 
+{
+    .wi-navigation-left 
+    {
+        margin-top:4px !important;
+    }
+    
+    .wi-logo
+    {
+        width: 140px !important;
+        background-image:url('../images/logo.png') !important;
+        background-size: 40% !important;
+    }
+    
+    .wi-logo-mob
+    {
+        width: 220px !important;
+        background-size: 220px !important;
+    }
+
+}
+
 html
 {
     margin: 0;
@@ -102,7 +124,9 @@ text-decoration: none;
 
 .wi-navigation-left {
   padding-left : 0px;
+  margin-top:3px;
 }
+
 .wi-navigation-left li
 {
     float: left;
@@ -200,12 +224,13 @@ text-decoration: none;
 
 .wi-logo
 {
-    width: 260px;
+    width: 220px;
     height: 42px;
     background-image: url('../images/logotext.png');
     background-position-y: 16px;
-    background-size: 260px;
+    background-size: 220px;
     background-repeat: no-repeat;
+    padding-top:10px;
 }
 
 

@@ -81,7 +81,6 @@
                 <?php echo $what->text; ?>
               </ul>
             </div>
-            <br>
         <?php endforeach;?>
           </div>
         </div>

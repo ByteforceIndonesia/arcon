@@ -52,6 +52,10 @@ height : 100%;
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+    
+<!--Tether IO-->
+<script src="<?php echo base_url() ?>assets/js/tether.min.js"></script>
+<link rel="stylesheet" href="<?php echo base_url() ?>assets/css/tether.min.css">
 
 <!--Bootstrap-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
