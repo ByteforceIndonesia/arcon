@@ -57,7 +57,7 @@
           </p>
         </div>
           
-<div class="col-lg-6">
+<div class="col-lg-6 contact-us">
   <p><?php echo $contact_us ?></p>
 
   <?php echo form_open('home/email', array('class' => 'contact-form')); ?>

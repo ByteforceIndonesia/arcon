@@ -22,7 +22,7 @@
     <!-- Motto -->
       <div class="">
         <div class="image">
-          <img src="<?php echo base_url() . $about_text->images ?>" alt="" class="largeImage col-lg-12" width = "100%">
+          <img src="<?php echo base_url() . $about_text->images ?>" alt="" class="largeImage col-lg-12" width = "100%" style="margin-top:50px">
 
           <img src="<?php echo base_url() . $about_motto->images ?>" alt="" class="smallImage col-lg-8" width = "100%">
           <div class="col-lg-4">
@@ -56,7 +56,7 @@
 <!-- Portfolio -->
   <section class="content-whatWeDo" id="whatwedo">
     <div class="container">
-      <div class="col-lg-3">
+      <div class="col-lg-3 what-we-do">
 
         <div class="content-menu-line"></div>
         <div class="content-menu">
