@@ -68,7 +68,6 @@
           <p>We offer 3 kinds of service including : construction, interior, and renovation.</p>
         </ul>
       </div>
-        <br><br>
       <div class="col-lg-9 imageContainer">
 
         <?php $counter = 0; foreach($wedo as $what): $counter++;?>

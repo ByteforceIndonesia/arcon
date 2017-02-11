@@ -18,9 +18,59 @@
         background-size: 220px !important;
     }
     
+    .imageContainer{
+      padding-top:10em;
+    } 
+    
+    .content-menu-links
+    {
+        right:0;
+    }
+    
+    .serviceType
+    {
+        margin-bottom:5em;
+    }
+    
+    p
+    {
+        text-align: justify;
+        font-size: 16px !important;
+    }
+    
+    .ourMotto
+    {
+        font-size: 16px !important;
+    }
+    
+    .contact-profile-picture
+    {
+        padding-left:15%;
+        padding-right:15%;
+    }
+    
+    #contact
+    {
+        height:280px;
+        overflow-y:scroll;
+    }
+    
+    .marketingPhone li{
+        margin-bottom:36px;
+        margin-top:-10px;
+    }
 }
 
-@media screen and (max-width: 1200px) 
+@media screen and (max-width: 720px) and (min-width: 430px)
+{
+    .contact-profile-picture
+    {
+        padding-left:30% !important;
+        padding-right:30% !important;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 380px)
 {
     .imageContainer{
       padding-top:10em;
@@ -29,6 +79,39 @@
     .content-menu-links
     {
         right:0;
+    }
+    
+    .serviceType
+    {
+        margin-bottom:5em;
+    }
+    
+    p
+    {
+        text-align: justify;
+        font-size: 16px !important;
+    }
+    
+    .ourMotto
+    {
+        font-size: 16px !important;
+    }
+    
+    .contact-profile-picture
+    {
+        padding-left:20%;
+        padding-right:20%;
+    }
+    
+    .marketingPhone li{
+        margin-bottom:36px;
+        margin-top:-10px;
+    }
+    
+    #contact
+    {
+        height:280px !important;
+        overflow:auto;
     }
 }
 
@@ -111,7 +194,12 @@ body
     font-size : 2em;
 }
 
-
+.wrapper
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .wi-navigation-center a {
     width : 100%;
@@ -441,7 +529,7 @@ font-size : 18px;
     background-size: cover;
 }
 .marketingPhone li{
-  margin-bottom : 36px;
+  margin-top : 10px;
   margin-left : 0px;
   color : white;
   text-align : center;
@@ -450,12 +538,27 @@ font-size : 18px;
 .contact-name{position : relative;
   font-weight : 600;
   font-size : 120%;
-
+width:80%
 }
 .marketingPhone{
   margin-left : 0px;
   padding-left : 0px;
   list-style : none;
+  width:100%;
+}
+
+.breakword
+{
+    overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+    white-space: normal;
 }
 
 .contact-profile-picture img{position : relative;

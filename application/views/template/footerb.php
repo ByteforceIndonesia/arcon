@@ -2,30 +2,32 @@
  <section class="parallax-window2" data-parallax="scroll" data-image-src="<?php echo $parallax_two?>"></section>
 
 <!-- Team -->
- <section class="content-contacts" id="contact">
-   <div class="container">
-     <div class="col-lg-12">
+  <section class="content-contacts" id="contact">
+    <div class="container-fluid">
+    <div class="">
+      <div class="row row-horizon wrapper">
 
-       <ul class="marketingPhone"><li  class="col-lg-1 hidden-sm hidden-xs"></li>
-           <?php foreach ($team as $people): ?>
-               <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div>
-                   <span class="contact-name">
-                       <?php echo $people->name ?>
-                   </span>
-                   <br>
-                   <span class="contact-details">
-                       <?php echo $people->phone ?>
-                       <br>
-                       <?php echo $people->email ?>
-                   </span>
-               </li>
+        <ul class="marketingPhone breakword">
+            <li class="col-lg-1 hidden-md hidden-sm hidden-xs"></li>
+            <?php foreach ($team as $people): ?>
+                <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12 breakword"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div>
+                    <span class="contact-name">
+                        <?php echo $people->name ?>
+                    </span>
+                    <br>
+                    <span class="contact-details">
+                        <?php echo $people->phone ?>
+                        <br>
+                        <?php echo $people->email ?>
+                    </span>
+                </li>
 
-           <?php endforeach; ?>
-       </ul>
+            <?php endforeach; ?>
+        </ul>
+      </div>
      </div>
-
-   </div>
- </section>
+    </div>
+  </section>
 
 <!-- Parallax -->
 <section class="parallax-windowz" data-parallax="scroll" data-image-src="<?php echo $parallax_three?>"></section>

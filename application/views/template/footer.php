@@ -3,12 +3,14 @@
 
  <!-- Team -->
   <section class="content-contacts" id="contact">
-    <div class="container">
-      <div class="col-lg-12">
+    <div class="container-fluid">
+    <div class="">
+      <div class="row row-horizon wrapper">
 
-        <ul class="marketingPhone"><li  class="col-lg-1 hidden-sm hidden-xs"></li>
+        <ul class="marketingPhone breakword">
+            <li class="col-lg-1 hidden-md hidden-sm hidden-xs"></li>
             <?php foreach ($team as $people): ?>
-                <li class="col-lg-2 col-md-2 col-sm-6 col-xs-12"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div>
+                <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12 breakword"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div>
                     <span class="contact-name">
                         <?php echo $people->name ?>
                     </span>
@@ -23,7 +25,7 @@
             <?php endforeach; ?>
         </ul>
       </div>
-
+     </div>
     </div>
   </section>
 

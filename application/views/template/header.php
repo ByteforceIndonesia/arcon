@@ -10,6 +10,7 @@
 
     <!-- CSS -->
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/bootstrap-horizon.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/alpha.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/js/slick/slick.css" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -21,7 +22,7 @@
 
     <!-- Slider -->
         <nav class ="wi-navigation-mob hidden-lg hidden-md">
-            <div class="container ">
+            <div class="container">
                 <div class="col-lg-12">
                     <ul class="pull-right wi-navigation-center horizontal-center  ">
                         <li class="wi-logo-mob"></li>
