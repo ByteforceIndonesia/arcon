@@ -24,9 +24,9 @@
                     
             </div>
               <div class= "ImagePackBig">
-              <center>
-                  <img src="<?php echo base_url() . $project->images ?>" alt="" class="smallImage" width = "100%">
-              </center>
+                    <center>
+                  <img src="<?php echo base_url() . $project->images ?>" alt="" class="firstImage" width = "100%">
+                    </center>
                   </div>
 
               </div>
@@ -36,18 +36,18 @@
             <div class="col-lg-12">
                 
               <!-- Kiri -->
-              <div class="col-lg-6 nopadding-left">
+              <div class="col-lg-6">
                   <?php
                     $images = glob($project->datas . "/*.jpg");
 
                     foreach($images as $count => $image):
                     if($count > count($images)/2)break;
-                  ?>
-                    <center>    
-                    <div class= "ImagePack">
+                  ?>    
+                    <div class= "ImagePackOne">
+                    <center>
                           <img src="<?php echo base_url() . $image ?>" alt="" class="smallImage" width = "100%">
+                    </center>
                         </div>
-                  </center>
                  <?php
                     endforeach;
                   ?>
@@ -55,13 +55,13 @@
                 
                 
               <!-- Kanan -->
-              <div class="col-lg-6 nopadding-right">
+              <div class="col-lg-6">
                   <?php
                     foreach($images as $count => $image):
                     if($count < count($images)/2)continue;
                   ?>
                         <a href="<?php echo base_url() . $image ?>" data-lity data-lity-desc="">
-                        <div class= "ImagePack">
+                        <div class= "ImagePackOne">
                           <img src="<?php echo base_url() . $image ?>" alt="" class="smallImage" width = "100%">
                         </div>
                         </a>

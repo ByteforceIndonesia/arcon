@@ -28,7 +28,7 @@
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
                     <div class= "ImagePack">
                         <span class="galleryImageTitle"><?php echo $project->name ?></span>
-                        <img src="<?php echo base_url() . $project->images ?>" alt="" class="smallImage" width = "100%">
+                        <img src="<?php echo base_url() . $project->images ?>" alt="" class="largeImage" width = "100%">
                     </div>
                 </a>
                 <?php endforeach; ?>
@@ -40,10 +40,10 @@
                 if($count < count($gallery)/2) continue; 
                 if($count > count($gallery)) break;
               ?>
-                <a href= "#">
-                    <div class= "ImagePack">
-                        <span class="galleryImageTitle">Antaya Tour Palembang Icon Mall</span>
-                        <img src="assets/images/10.jpg" alt="" class="smallImage" width = "100%">
+                <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
+                    <div class= "ImagePackPrj">
+                        <span class="galleryImageTitle"><?php echo $project->name ?></span>
+                        <img src="<?php echo base_url() . $project->images ?>" alt="" class="largeImage" width = "100%">
                     </div>
                 </a>
               <?php endforeach; ?>

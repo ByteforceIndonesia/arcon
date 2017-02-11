@@ -97,6 +97,24 @@ $(document).ready(function () {
 </script>
 -->
 
+<!--Smooth Scrolling-->
+<script type="text/javascript">
+    $(function() {
+      $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
+    });
+</script>
+
  <script>
     $('.wi-navigation-mob').css('display','none');
 
@@ -114,13 +132,12 @@ $(document).ready(function () {
 
             $('.wi-navigation').css("position", "fixed");
             $('.wi-navigation').css("top", "0px");
-            $('.wi-navigation').css("background-color", "white");
+            $('.wi-navigation').css("bakground-color", "white");
             $('.wi-navigation').css("bottom", "auto");$('.wi-navigation a').css("color", `#000`);
             $('.wi-navigation-right').find('li:after').css("background-color", "#000");
            $('.wi-navigation-right').addClass('wnrBlack');
-
-
-               $(function() {
+     
+        $(function() {
                  var div = $('.ImagePack');
                  var width = div.width()*0.55;
                  var margin = width*0.85;
@@ -130,7 +147,6 @@ $(document).ready(function () {
                  div.css('height', width);
                  text.css('margin-top', margin-textWidth);
              });
-//$('message-text-area').autoResize();
 
  </script>
 </body>
