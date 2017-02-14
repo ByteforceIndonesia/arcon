@@ -2,32 +2,34 @@
  <section class="parallax-window2" data-parallax="scroll" data-image-src="<?php echo $parallax_two?>"></section>
 
 <!-- Team -->
-  <section class="content-contacts" id="contact">
-    <div class="container-fluid">
-    <div class="">
-      <div class="row row-horizon wrapper">
-
-        <ul class="marketingPhone breakword">
-            <li class="col-lg-1 hidden-md hidden-sm hidden-xs"></li>
-            <?php foreach ($team as $people): ?>
-                <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12 breakword"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div>
-                    <span class="contact-name">
-                        <?php echo $people->name ?>
-                    </span>
-                    <br>
-                    <span class="contact-details">
-                        <?php echo $people->phone ?>
-                        <br>
-                        <?php echo $people->email ?>
-                    </span>
-                </li>
-
-            <?php endforeach; ?>
-        </ul>
-      </div>
+ <section class="content-contacts" id="contact">
+   <div class="container-fluid">
+   <div class="">
+     <div class="row wrapper">
+       <div class="marketingPhone breakword slick-car">
+           <?php foreach ($team as $people): ?>
+             <div class="breakword">
+               <li>
+                 <div class="contact-profile-picture">
+                   <center><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div></center>
+                   <span class="contact-name">
+                       <?php echo $people->name ?>
+                   </span>
+                   <br>
+                   <span class="contact-details">
+                       <?php echo $people->phone ?>
+                       <br>
+                       <?php echo $people->email ?>
+                   </span>
+               </li>
+             </div>
+           <?php endforeach; ?>
+       </div>
      </div>
     </div>
-  </section>
+   </div>
+ </section>
+
 
 <!-- Parallax -->
 <section class="parallax-windowz" data-parallax="scroll" data-image-src="<?php echo $parallax_three?>"></section>
@@ -90,7 +92,7 @@ $(document).ready(function () {
     $('body').bind('cut copy paste', function (e) {
         e.preventDefault();
     });
-   
+
     //Disable mouse right click
     $("body").on("contextmenu",function(e){
         return false;
@@ -122,7 +124,12 @@ $(document).ready(function () {
 
          $('#navbarLink').click(function(){
             $('.wi-navigation-mob').css('display','block');
-         });
+            $('.wi-navigation-mob').addClass('fadeinRight');
+          });
+
+        $('.links').click(function (){
+            $('.wi-navigation-mob').css('display','none');
+        });
 
        $('.wi-navigation-mob').click(function(){
           $('.wi-navigation-mob').css('display','none');
@@ -131,6 +138,40 @@ $(document).ready(function () {
              $('.wi-navigation-mob').css('opacity','0.5');
           });
 
+          $('.slick-car').slick({
+             arrows: true,
+             slidesToShow: 5,
+             slidesToScroll: 5,
+             responsive: [
+             {
+               breakpoint: 1024,
+               settings: {
+                 slidesToShow: 3,
+                 slidesToScroll: 3,
+                 infinite: true,
+                 dots: true
+               }
+             },
+             {
+               breakpoint: 600,
+               settings: {
+                 slidesToShow: 2,
+                 slidesToScroll: 2
+               }
+             },
+             {
+               breakpoint: 480,
+               settings: {
+                 slidesToShow: 1,
+                 slidesToScroll: 1
+               }
+             }
+             // You can unslick at a given breakpoint now by adding:
+             // settings: "unslick"
+             // instead of a settings object
+           ]
+          })
+
 
             $('.wi-navigation').css("position", "fixed");
             $('.wi-navigation').css("top", "0px");
@@ -138,7 +179,7 @@ $(document).ready(function () {
             $('.wi-navigation').css("bottom", "auto");$('.wi-navigation a').css("color", `#000`);
             $('.wi-navigation-right').find('li:after').css("background-color", "#000");
            $('.wi-navigation-right').addClass('wnrBlack');
-     
+
         $(function() {
                  var div = $('.ImagePack');
                  var width = div.width()*0.55;

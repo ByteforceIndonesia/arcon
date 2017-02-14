@@ -9,10 +9,12 @@
     <title><?php echo $page_title ?></title>
 
     <!-- CSS -->
+    <link href="<?php echo base_url() ?>assets/js/slick/slick.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/js/slick/slick-theme.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/bootstrap-horizon.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/animate.css" rel="stylesheet">
     <link href="<?php echo base_url() ?>assets/css/alpha.css" rel="stylesheet">
-    <link href="<?php echo base_url() ?>assets/js/slick/slick.css" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
@@ -21,26 +23,23 @@
 
 
     <!-- Slider -->
-        <nav class ="wi-navigation-mob hidden-lg hidden-md">
+        <nav class ="wi-navigation-mob hidden-lg hidden-md animated">
             <div class="container">
                 <div class="col-lg-12">
                     <ul class="pull-right wi-navigation-center horizontal-center  ">
                         <li class="wi-logo-mob"></li>
-                        <a href = "<?php echo base_url(); ?>" <?php if($this->uri->segment(1) != 'gallery'): ?>class ="active"<?php endif; ?>><li>Home</li></a>
-                        <a href = "<?php echo base_url(); ?>#about"><li>About</li></a>
-                        <a href = "<?php echo base_url('gallery') ?>" <?php if($this->uri->segment(1) == 'gallery'): ?>class ="active"<?php endif; ?>><li>Gallery</li></a>
-                        <a href = "<?php echo base_url(); ?>#whatwedo"><li>What we do</li></a>
-                        <a href = "<?php echo base_url(); ?>#contact"><li>Contact</li></a>
+                        <a href = "<?php echo base_url(); ?>" <?php if($this->uri->segment(1) != 'gallery'): ?>class ="active"<?php endif; ?>><li class="links">Home</li></a>
+                        <a href = "<?php echo base_url(); ?>#about"><li class="links">About</li></a>
+                        <a href = "<?php echo base_url('gallery') ?>" <?php if($this->uri->segment(1) == 'gallery'): ?>class ="active"<?php endif; ?>><li class="links">Gallery</li></a>
+                        <a href = "<?php echo base_url(); ?>#whatwedo"><li class="links">What we do</li></a>
+                        <a href = "<?php echo base_url(); ?>#contact"><li class="links">Contact</li></a>
                     </ul>
                 </div>
             </div>
         </nav>
+
   <!-- Parallax Slider -->
   <section class="parallax-window parallax-buskwak" id="paralax-home"data-parallax="scroll" data-image-src="#buskrak"></section>
-
-
-
-
 
   <section class="home-slider">
 

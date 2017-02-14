@@ -9,7 +9,7 @@
       <div class="content-menu-line-under"></div>
       <br>
       <ul class="content-menu-links">
-            <a href="<?php echo base_url('gallery/residence') ?>"><li>Residence</li></a>
+            <a href="<?php echo base_url('gallery/residential') ?>"><li>Residential</li></a>
             <a href="<?php echo base_url('gallery/comercial') ?>"><li>Comercial</li></a>
             <a href="<?php echo base_url('gallery/others') ?>"><li>Other Projects</li></a>
       </ul>
@@ -21,7 +21,7 @@
                         <h2><?php echo $project->name ?></h2>
                         <hr class = "productPageLine">
                 <span class="productPageAlamat"><?php echo $project->description ?></span><br><br>
-                    
+
             </div>
               <div class= "ImagePackBig">
                     <center>
@@ -31,10 +31,10 @@
 
               </div>
           </div>
-        
+
           <div class="image">
             <div class="col-lg-12">
-                
+
               <!-- Kiri -->
               <div class="col-lg-6">
                   <?php
@@ -42,7 +42,7 @@
 
                     foreach($images as $count => $image):
                     if($count > count($images)/2)break;
-                  ?>    
+                  ?>
                     <div class= "ImagePackOne">
                     <center>
                           <img src="<?php echo base_url() . $image ?>" alt="" class="smallImage" width = "100%">
@@ -52,8 +52,8 @@
                     endforeach;
                   ?>
               </div>
-                
-                
+
+
               <!-- Kanan -->
               <div class="col-lg-6">
                   <?php
@@ -67,7 +67,7 @@
                         </a>
                    <?php
                         endforeach;
-                    ?> 
+                    ?>
                </div>
 
           </div>

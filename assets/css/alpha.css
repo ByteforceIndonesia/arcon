@@ -1,77 +1,62 @@
-@media screen and (max-width: 380px) 
+@media screen and (max-width: 380px)
 {
-    .wi-navigation-left 
+    .wi-navigation-left
     {
         margin-top:4px !important;
     }
-    
+
     .wi-logo
     {
         width: 140px !important;
         background-image:url('../images/logo.png') !important;
         background-size: 40% !important;
     }
-    
+
     .wi-logo-mob
     {
         width: 220px !important;
         background-size: 220px !important;
     }
-    
+
     .imageContainer{
       padding-top:10em;
-    } 
-    
+    }
+
     .content-menu-links
     {
         right:0;
     }
-    
+
     .serviceType
     {
         margin-bottom:5em;
     }
-    
+
     p
     {
         text-align: justify;
         font-size: 16px !important;
     }
-    
+
     .ourMotto
     {
         font-size: 16px !important;
     }
-    
-    .contact-profile-picture
-    {
-        padding-left:15%;
-        padding-right:15%;
-    }
-    
+
     #contact
     {
-        height:280px;
-        overflow-y:scroll;
+        height:300px;
+        overflow-y:none;
     }
-    
+
     .marketingPhone li{
         margin-bottom:36px;
         margin-top:-10px;
     }
-    
+
     .contact-us
     {
         margin-top:5em;
-    }
-}
-
-@media screen and (max-width: 720px) and (min-width: 430px)
-{
-    .contact-profile-picture
-    {
-        padding-left:30% !important;
-        padding-right:30% !important;
     }
 }
 
@@ -79,46 +64,40 @@
 {
     .imageContainer{
       padding-top:10em;
-    } 
-    
+    }
+
     .content-menu-links
     {
         right:0;
     }
-    
+
     .serviceType
     {
         margin-bottom:5em;
     }
-    
+
     p
     {
         text-align: justify;
         font-size: 16px !important;
     }
-    
+
     .ourMotto
     {
         font-size: 16px !important;
     }
-    
-    .contact-profile-picture
-    {
-        padding-left:20%;
-        padding-right:20%;
-    }
-    
+
     .marketingPhone li{
         margin-bottom:36px;
         margin-top:-10px;
     }
-    
+
     #contact
     {
-        height:280px !important;
-        overflow:auto;
+        height:350px !important;
+        overflow:none;
     }
-    
+
     .contact-us
     {
         margin-top:5em;
@@ -208,7 +187,7 @@ body
     padding-bottom : 24px;
     width : 100%;
     color : black;
-    list-style : none;    
+    list-style : none;
     font-size : 2em;
 }
 
@@ -591,6 +570,13 @@ width:80%
   box-shadow : none;
 
 }
+
+#contact
+{
+    height:350px !important;
+    overflow:none;
+}
+
 .contact-form input[type="text"]{
   margin-top : 5px;
   padding-left : 0px;
@@ -775,8 +761,14 @@ width: 100%;
   position: fixed;
   z-index : 10000;
   width : 100%;
-  height: 100%;background-color: rgba(255,255,255,0.8);
-    color : black;
+  height: 100%;
+    background-color: rgba(250,250,250,1);
+    transition: opacity 0.2s ease;
+}
+
+
+.wi-navigation-mob a li{
+    color : #000 !important;
 }
 
 @media screen and (max-width: 720px) {
@@ -806,7 +798,6 @@ width: 100%;
 
     .contact-profile-picture img{position : relative;
       margin-bottom : 15px;
-      width : 60%;
       border-radius : 100%;
     }
 

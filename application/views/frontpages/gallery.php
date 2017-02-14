@@ -21,8 +21,8 @@
             <div class="col-lg-12">
               <div class="col-lg-6 nopadding-left">
       <br><br>
-              <?php 
-                foreach($gallery as $count => $project): 
+              <?php
+                foreach($gallery as $count => $project):
                 if($count > count($gallery)/2) break;
               ?>
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
@@ -33,11 +33,11 @@
                 </a>
                 <?php endforeach; ?>
             </div>
-            
+
               <div class="col-lg-6 nopadding-right">
-              <?php 
-                foreach($gallery as $count => $project): 
-                if($count < count($gallery)/2) continue; 
+              <?php
+                foreach($gallery as $count => $project):
+                if($count < count($gallery)/2) continue;
                 if($count > count($gallery)) break;
               ?>
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">

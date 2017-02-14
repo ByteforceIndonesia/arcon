@@ -38,7 +38,7 @@
 
 <!-- Gallery -->
 <section class="Gallery" id="gallery">
-  <a href = "<?php echo base_url('gallery/residence') ?>">
+  <a href = "<?php echo base_url('gallery/residential') ?>">
     <div class="galleryResidence galleryMenu" style="background-image : url('<?php echo base_url() . $gallery_banner_residence ?>');"><div class="galleryMargin"></div>
       <div class="galleryText">RESIDENTIAL</div>
     </div>
@@ -65,7 +65,8 @@
         <div class="content-menu-line-under"></div>
         <br>
         <ul class="content-menu-links">
-          <p>We offer 3 kinds of service including : construction, interior, and renovation.</p>
+          <p>We offer 3 kinds of service including :
+              <br>construction, interior, and renovation.</p>
         </ul>
       </div>
       <div class="col-lg-9 imageContainer">
@@ -73,16 +74,16 @@
         <?php $counter = 0; foreach($wedo as $what): $counter++;?>
         <div class="">
           <div class="image">
-            <div class="col-lg-4 serviceType">
+            <div class="col-lg-4 serviceType animated what-<?php echo $counter; ?>">
               <h2 class="col-lg-12 wwdTitle"><?php echo $counter . '. ' . $what->name; ?></h2>
               <img src="<?php echo base_url() . $what->link; ?>" alt="" class="" width = "100%">
               <ul class="serviceList">
                 <?php echo $what->text; ?>
               </ul>
             </div>
-        <?php endforeach;?>
           </div>
         </div>
+        <?php endforeach;?>
       </div>
     </div>
   </section>

@@ -1,33 +1,38 @@
  <!-- Parallax  -->
   <section class="parallax-window2" data-parallax="scroll" data-image-src="<?php echo $parallax_two?>"></section>
 
- <!-- Team -->
-  <section class="content-contacts" id="contact">
-    <div class="container-fluid">
-    <div class="">
-      <div class="row row-horizon wrapper">
 
-        <ul class="marketingPhone breakword">
-            <li class="col-lg-1 hidden-md hidden-sm hidden-xs"></li>
-            <?php foreach ($team as $people): ?>
-                <li class="col-lg-2 col-md-4 col-sm-6 col-xs-12 breakword"><div class="contact-profile-picture"><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div>
-                    <span class="contact-name">
-                        <?php echo $people->name ?>
-                    </span>
-                    <br>
-                    <span class="contact-details">
-                        <?php echo $people->phone ?>
-                        <br>
-                        <?php echo $people->email ?>
-                    </span>
-                </li>
-
-            <?php endforeach; ?>
-        </ul>
+  <!-- Team -->
+   <section class="content-contacts" id="contact">
+     <div class="container-fluid">
+     <div class="">
+       <div class="row wrapper">
+         <div class="marketingPhone breakword slick-car">
+             <?php foreach ($team as $people): ?>
+               <div class="breakword">
+                 <li>
+                   <div class="contact-profile-picture">
+                     <center>
+                       <img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/>
+                     </center>
+                   </div>
+                     <span class="contact-name">
+                         <?php echo $people->name ?>
+                     </span>
+                     <br>
+                     <span class="contact-details">
+                         <?php echo $people->phone ?>
+                         <br>
+                         <?php echo $people->email ?>
+                     </span>
+                 </li>
+               </div>
+             <?php endforeach; ?>
+         </div>
+       </div>
       </div>
      </div>
-    </div>
-  </section>
+   </section>
 
 <!-- Parallax -->
  <section class="parallax-windowz" data-parallax="scroll" data-image-src="<?php echo $parallax_three?>"></section>
@@ -56,7 +61,7 @@
               </span>
           </p>
         </div>
-          
+
 <div class="col-lg-6 contact-us">
   <p><?php echo $contact_us ?></p>
 
@@ -83,6 +88,7 @@
 
     <script src="<?php echo base_url() ?>assets/js/lity.js"></script>
     <script src="<?php echo base_url() ?>assets/js/slick/slick.js"></script>
+    <script src="<?php echo base_url() ?>assets/js/jquery.waypoints.min.js"></script>
 
 <!-- Disable right click -->
 <!--
@@ -92,7 +98,7 @@ $(document).ready(function () {
     $('body').bind('cut copy paste', function (e) {
         e.preventDefault();
     });
-   
+
     //Disable mouse right click
     $("body").on("contextmenu",function(e){
         return false;
@@ -100,6 +106,19 @@ $(document).ready(function () {
 });
 </script>
 -->
+
+<!-- Animations -->
+<script type="text/javascript">
+    var whatwedo = new Waypoint({
+      element: document.getElementById('whatwedo'),
+      handler: function() {
+        $('.what-1').addClass('slideInUp');
+          setTimeout(function() {$('.what-2').addClass('slideInUp')}, 50);
+            setTimeout(function() {$('.what-3').addClass('slideInUp')}, 100);
+      },
+      offset: '95%'
+    })
+</script>
 
 <!--Smooth Scrolling-->
 <script type="text/javascript">
@@ -124,7 +143,12 @@ $(document).ready(function () {
 
           $('#navbarLink').click(function(){
              $('.wi-navigation-mob').css('display','block');
+             $('.wi-navigation-mob').addClass('fadeinRight');
           });
+
+        $('.links').click(function (){
+            $('.wi-navigation-mob').css('display','none');
+        });
 
         $('.wi-navigation-mob').click(function(){
            $('.wi-navigation-mob').css('display','none');
@@ -167,26 +191,59 @@ $(document).ready(function () {
 
            $('#homeSliderParalax').slick({
 
-               arrows: true,
+             arrows: true,
              autoplay: true,
              autoplaySpeed: 2000
            });
 
+           $('.slick-car').slick({
+              arrows: true,
+              slidesToShow: 5,
+              slidesToScroll: 5,
+              responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true
+                }
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2
+                }
+              },
+              {
+                breakpoint: 480,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+              // You can unslick at a given breakpoint now by adding:
+              // settings: "unslick"
+              // instead of a settings object
+            ]
+           })
+
            $('.parallax-buskwak').parallax({imageSrc: '#buskwak'});
-           if($('.parallax-slider').attr('src')=="#buskwak"){
              var parax = $('.parallax-slider');
-           }
+
             $('.parallax-window').parallax({imageSrc: ''});
                       //console.log();
-            $('.parallax-slider').attr("src","assets/images/10.jpg");
+            $('.parallax-slider').attr("src","assets/images/slider/1.jpg");
             var thisId=0;
             $(function(){
               //prepare Your data array with img urls
               var dataArray=new Array();
-              dataArray[0]="assets/images/slider/1.jpg";
-              dataArray[1]="assets/images/slider/2.jpg";
-              dataArray[2]="assets/images/slider/3.jpg";
-              dataArray[3]="assets/images/slider/4.jpg";
+              dataArray[0]="<?php echo base_url() ?>assets/images/slider/1.jpg";
+              dataArray[1]="<?php echo base_url() ?>assets/images/slider/2.jpg";
+              dataArray[2]="<?php echo base_url() ?>assets/images/slider/3.jpg";
+              dataArray[3]="<?php echo base_url() ?>assets/images/slider/4.jpg";
 
               //start with id=0 after 5 seconds
 
@@ -208,10 +265,10 @@ $(document).ready(function () {
   </script>
 
   <div class="preload">
-     <img src="assets/images/slider/1.jpg" width="1" height="1" alt="Image 01" />
-     <img src="assets/images/slider/2.jpg" width="1" height="1" alt="Image 02" />
-     <img src="assets/images/slider/3.jpg" width="1" height="1" alt="Image 03" />
-     <img src="assets/images/slider/4.jpg" width="1" height="1" alt="Image 03" />
+     <img src="<?php echo base_url() ?>assets/images/slider/1.jpg" width="1" height="1" alt="Image 01" />
+     <img src="<?php echo base_url() ?>assets/images/slider/2.jpg" width="1" height="1" alt="Image 02" />
+     <img src="<?php echo base_url() ?>assets/images/slider/3.jpg" width="1" height="1" alt="Image 03" />
+     <img src="<?php echo base_url() ?>assets/images/slider/4.jpg" width="1" height="1" alt="Image 03" />
   </div>
 
 </body>
