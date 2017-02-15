@@ -76,10 +76,13 @@
 
 
 
+ <link href="<?php echo base_url() ?>assets/js/slick/slick.css" rel="stylesheet">
+ <link href="<?php echo base_url() ?>assets/js/slick/slick-theme.css" rel="stylesheet">
 
 
  <!-- Scripts -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ <script src="<?php echo base_url() ?>assets/js/slick/slick.js"></script>
  <script src="<?php echo base_url() ?>assets/js/bootstrap.min.js"></script>
  <script src="<?php echo base_url() ?>assets/js/parallax.js"></script>
  <script src="<?php echo base_url() ?>assets/js/lity.js"></script>

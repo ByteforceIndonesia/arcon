@@ -10,7 +10,7 @@
       <br>
       <ul class="content-menu-links">
         <a href="<?php echo base_url('gallery/residential') ?>"><li>Residential</li></a>
-        <a href="<?php echo base_url('gallery/comercial') ?>"><li>Comercial</li></a>
+        <a href="<?php echo base_url('gallery/comercial') ?>"><li>Commercial</li></a>
         <a href="<?php echo base_url('gallery/others') ?>"><li>Other Projects</li></a>
       </ul>
     </div>

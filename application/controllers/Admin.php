@@ -338,7 +338,7 @@ class Admin extends CI_Controller {
 
                 if($this->admin_model->delete_project($uuid))
                 {
-                    $this->admin_model->recustiveRemoveDirectory(base_url() . $project->datas);
+                    $this->admin_model->recursiveRemoveDirectory(base_url() . $project->datas);
                     $this->session->set_flashdata('success', 'Delete Flashdata Success');
                     $this->project();
                 }
@@ -516,7 +516,6 @@ class Admin extends CI_Controller {
                         //Config for upload class
                         $config['upload_path']          = './' . $data['datas'];
                         $config['allowed_types']        = 'jpg|png|docx|pdf';
-                        $config['overwrite']            = TRUE;
 
                         $this->load->library('upload');
 
@@ -534,12 +533,12 @@ class Admin extends CI_Controller {
                                 $_FILES['img']['error']= $files['data']['error'][$i];
                                 $_FILES['img']['size']= $files['data']['size'][$i];
 
+                                $config['file_name']  = $i . '.jpg';
                                 $this->upload->initialize($config);
 
                                 if ( !$this->upload->do_upload('img') )
                                 {
                                     print_r($this->upload->display_errors());
-                                    echo '1';
                                     exit;
                                 }
                             }
