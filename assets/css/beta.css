@@ -24,6 +24,11 @@
   margin-top : 40px;
 }
 
+#nav
+{
+  margin-bottom:2em;
+  height:100px;
+}
 
 .ImagePack{
   overflow : hidden;
