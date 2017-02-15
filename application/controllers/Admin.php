@@ -338,7 +338,7 @@ class Admin extends CI_Controller {
 
                 if($this->admin_model->delete_project($uuid))
                 {
-                    unlink(base_url() . $project->datas);
+                    $this->admin_model->recustiveRemoveDirectory(base_url() . $project->datas);
                     $this->session->set_flashdata('success', 'Delete Flashdata Success');
                     $this->project();
                 }
