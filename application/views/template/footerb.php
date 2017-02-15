@@ -183,16 +183,7 @@ $(document).ready(function () {
             $('.wi-navigation-right').find('li:after').css("background-color", "#000");
            $('.wi-navigation-right').addClass('wnrBlack');
 
-        $(function() {
-                 var div = $('.ImagePack');
-                 var width = div.width()*0.55;
-                 var margin = width*0.85;
-                 var text =   div.find( '.galleryImageTitle' );
-                 var textWidth = text.height();
-
-                 div.css('height', width);
-                 text.css('margin-top', margin-textWidth);
-             });
+        
 
  </script>
 </body>

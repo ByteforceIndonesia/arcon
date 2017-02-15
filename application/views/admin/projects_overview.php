@@ -1,10 +1,15 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/dt-1.10.13/datatables.min.css"/>
+
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/dt-1.10.13/datatables.min.js"></script>
+
 <a href="<?php echo base_url('admin/project/new') ?>" class="btn btn-primary">
     New Project
 </a>
 
 <br><br>
 
-<table class="table table-bordered">
+<table class="table table-bordered" id="projects" style="width:100%">
+  <thead>
     <tr>
         <td>Num</td>
         <td>Project Name</td>
@@ -12,6 +17,8 @@
         <td>Project Freatured Image</td>
         <td>Actions</td>
     </tr>
+  </thead>
+  <tbody>
     <?php foreach ($projects as $count => $project): ?>
         <tr>
             <td><?php echo $count+1; ?></td>
@@ -28,4 +35,11 @@
             </td>
         </tr>
     <?php endforeach; ?>
+  </tbody>
 </table>
+
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#projects').DataTable();
+  } );
+</script>

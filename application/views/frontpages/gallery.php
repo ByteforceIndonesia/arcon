@@ -19,31 +19,28 @@
           <div class="col-lg-12">
           <div class="image">
             <div class="col-lg-12">
-              <div class="col-lg-6 nopadding-left">
-      <br><br>
+              <div class="col-lg-6">
               <?php
                 foreach($gallery as $count => $project):
                 if($count > count($gallery)/2) break;
               ?>
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
-                    <div class= "ImagePack">
+                    <div class= "ImagePack" style="background:url('<?php echo base_url() . $project->images ?>')">
                         <span class="galleryImageTitle"><?php echo $project->name ?></span>
-                        <img src="<?php echo base_url() . $project->images ?>" alt="" class="largeImage" width = "100%">
                     </div>
                 </a>
                 <?php endforeach; ?>
             </div>
 
-              <div class="col-lg-6 nopadding-right">
+              <div class="col-lg-6">
               <?php
                 foreach($gallery as $count => $project):
                 if($count < count($gallery)/2) continue;
                 if($count > count($gallery)) break;
               ?>
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
-                    <div class= "ImagePackPrj">
+                    <div class= "ImagePack" style="background:url('<?php echo base_url() . $project->images ?>')">
                         <span class="galleryImageTitle"><?php echo $project->name ?></span>
-                        <img src="<?php echo base_url() . $project->images ?>" alt="" class="largeImage" width = "100%">
                     </div>
                 </a>
               <?php endforeach; ?>

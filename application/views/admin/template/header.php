@@ -2,7 +2,7 @@
 <head>
 
     <title><?php echo $page_title ?></title>
-    
+
 <style>
 body {
   margin : 0px;
@@ -52,7 +52,7 @@ height : 100%;
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
-    
+
 <!--Tether IO-->
 <script src="<?php echo base_url() ?>assets/js/tether.min.js"></script>
 <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/tether.min.css">
@@ -60,11 +60,15 @@ height : 100%;
 <!--Bootstrap-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    
+
 <!--Tiny MCE-->
 <script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
 <script>tinymce.init({ selector:'textarea' });</script>
-    
+
+<!-- CropIt -->
+<script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.cropit.js">
+</script>
+
 </head>
     <body>
 <div class="sidebar">
@@ -74,43 +78,43 @@ height : 100%;
                 <h1 style="color:#fff">Arcon Indonesia Admin</h1>
             </li>
         </a>
-        
+
         <a href="<?php echo base_url('admin/config') ?>">
             <li>
                 Website Config
             </li>
         </a>
-        
+
         <a href="<?php echo base_url('admin/parallax') ?>">
             <li>
                 Parallax Settings
             </li>
         </a>
-        
+
         <a href="<?php echo base_url('admin/aboutus') ?>">
             <li>
                 Edit About Us
             </li>
         </a>
-        
+
         <a href="<?php echo base_url('admin/team') ?>">
             <li>
                 Edit Teams
             </li>
         </a>
-        
+
         <a href="<?php echo base_url('admin/project') ?>">
             <li>
                 Projects
             </li>
         </a>
-        
+
          <a href="<?php echo base_url('admin/logout') ?>">
              <li>
            Logout
             </li>
         </a>
-        
+
     </ul>
 </div>
 <div class="contentUpdate" style="overflow: auto;
