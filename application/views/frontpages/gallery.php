@@ -22,7 +22,11 @@
               <div class="col-lg-6">
               <?php
                 foreach($gallery as $count => $project):
-                if($count > count($gallery)/2) break;
+                if(count($gallery)%2 == 0)
+                {if($count > count($gallery)/2-1) break;}
+                else {
+                  if($count > count($gallery)/2) break;
+                }
               ?>
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
                     <div class= "ImagePack" style="background:url('<?php echo base_url() . $project->images ?>')">

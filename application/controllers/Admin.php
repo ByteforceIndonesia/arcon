@@ -474,7 +474,9 @@ class Admin extends CI_Controller {
                     //Changes in gallery table
                     if($this->input->post('freatured') == 1)
                     {
-                        $this->admin_model->make_freatured($data['project_uuid']);
+                        $this->admin_model->make_freatured($data['project_uuid'], 1);
+                    }else {
+                        $this->admin_model->make_freatured($data['project_uuid'], 0);
                     }
 
                     //Make directory

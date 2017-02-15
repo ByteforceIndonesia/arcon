@@ -69,6 +69,11 @@ height : 100%;
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.cropit.js">
 </script>
 
+<!-- DataTables -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/jqc-1.12.4/dt-1.10.13/fh-3.1.2/r-2.1.0/datatables.min.css"/>
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.7/jqc-1.12.4/dt-1.10.13/fh-3.1.2/r-2.1.0/datatables.min.js"></script>
+
+
 </head>
     <body>
 <div class="sidebar">

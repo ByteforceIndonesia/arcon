@@ -1,8 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Project_model extends CI_Model
-{	
-    
+{
+
     public function get($uuid)
     {
         $this->db->select('*');
@@ -11,5 +11,5 @@ class Project_model extends CI_Model
         $this->db->where('projects.project_uuid', $uuid);
         return $this->db->get()->row();
     }
-    
+
 }

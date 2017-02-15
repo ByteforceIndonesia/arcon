@@ -43,11 +43,13 @@
                     foreach($images as $count => $image):
                     if($count > count($images)/2)break;
                   ?>
+                  <a href="<?php echo base_url() . $image ?>" data-lity data-lity-desc="">
                     <div class= "ImagePackOne">
                     <center>
                           <img src="<?php echo base_url() . $image ?>" alt="" class="smallImage" width = "100%">
                     </center>
                         </div>
+                  </a>
                  <?php
                     endforeach;
                   ?>
