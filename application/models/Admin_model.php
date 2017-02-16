@@ -63,6 +63,11 @@ class Admin_model extends CI_Model
         return $this->db->insert('gallery', array('project_uuid' => $uuid, 'freatured' => $data));
     }
 
+    public function change_freatured($uuid, $data)
+    {
+        return $this->db->insert('gallery', array('project_uuid' => $uuid, 'freatured' => $data));
+    }
+
     public function delete_gallery($uuid)
     {
         return $this->db->delete('gallery', array('project_uuid' => $uuid));

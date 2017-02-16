@@ -1,5 +1,6 @@
 <section class="content-gallery">
   <div class="container">
+    <div class="row">
     <div class="col-lg-3">
 
       <div class="content-menu-line"></div>
@@ -33,15 +34,21 @@
           </div>
 
           <div class="image">
-            <div class="col-lg-12">
 
+            <!-- Design -->
+            <?php $design_images = glob($project->datas . "/design/*.{jpg,png,gif}", GLOB_BRACE); ?>
+            <div class="col-lg-12">
+            <?php if(!empty($design_images)): ?><h2 style="padding-left:0.5em">Design</h2><?php endif; ?>
               <!-- Kiri -->
               <div class="col-lg-6">
                   <?php
-                    $images = glob($project->datas . "/*.jpg");
-
-                    foreach($images as $count => $image):
-                    if($count > count($images)/2)break;
+                    foreach($design_images as $count => $image):
+                    if (count($design_images) % 2 == 0)
+                    {
+                      if($count > count($design_images)/2)break;
+                    }else {
+                      if($count > count($design_images)/2-1)break;
+                    }
                   ?>
                   <a href="<?php echo base_url() . $image ?>" data-lity data-lity-desc="">
                     <div class= "ImagePackOne">
@@ -59,8 +66,8 @@
               <!-- Kanan -->
               <div class="col-lg-6">
                   <?php
-                    foreach($images as $count => $image):
-                    if($count < count($images)/2)continue;
+                    foreach($design_images as $count => $image):
+                    if($count < count($design_images)/2)continue;
                   ?>
                         <a href="<?php echo base_url() . $image ?>" data-lity data-lity-desc="">
                         <div class= "ImagePackOne">
@@ -73,7 +80,53 @@
                </div>
 
           </div>
+
+          <!-- Result -->
+          <?php $result = glob($project->datas . "/result/*.{jpg,png,gif}", GLOB_BRACE); ?>
+          <div class="col-lg-12">
+          <?php if(!empty($result)): ?><h2 style="padding-left:padding-left:0.5em">Result</h2><?php endif; ?>
+            <!-- Kiri -->
+            <div class="col-lg-6">
+                <?php
+                  foreach($result as $count => $image):
+                  if (count($result) % 2 == 0)
+                  {
+                    if($count > count($result)/2)break;
+                  }else {
+                    if($count > count($result)/2-1)break;
+                  }
+                ?>
+                <a href="<?php echo base_url() . $image ?>" data-lity data-lity-desc="">
+                  <div class= "ImagePackOne">
+                  <center>
+                        <img src="<?php echo base_url() . $image ?>" alt="" class="smallImage" width = "100%">
+                  </center>
+                      </div>
+                </a>
+               <?php
+                  endforeach;
+                ?>
+            </div>
+
+
+            <!-- Kanan -->
+            <div class="col-lg-6">
+                  <?php
+                    foreach($result as $count => $image):
+                    if($count < count($result)/2)continue;
+                  ?>
+                        <a href="<?php echo base_url() . $image ?>" data-lity data-lity-desc="">
+                        <div class= "ImagePackOne">
+                          <img src="<?php echo base_url() . $image ?>" alt="" class="smallImage" width = "100%">
+                        </div>
+                        </a>
+                   <?php
+                        endforeach;
+                    ?>
+          </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </section>

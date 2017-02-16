@@ -1,7 +1,6 @@
 <section class="content-gallery">
   <div class="container">
     <div class="col-lg-3" id="nav">
-
       <div class="content-menu-line"></div>
       <div class="content-menu">
           <h3 class ="content-menu-title">GALLERY</h3>

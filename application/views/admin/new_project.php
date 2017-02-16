@@ -35,8 +35,13 @@
       </div>
       <br>
       <div class="input-group">
-        <span class="input-group-addon">Multiple Image Upload</span>
-        <input type="file" class="form-control" placeholder="Images" name="data[]" autocomplete="off" multiple>
+        <span class="input-group-addon">Design Imgaes</span>
+        <input type="file" class="form-control" placeholder="Images" name="design[]" autocomplete="off" multiple>
+      </div>
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon">Result Images</span>
+        <input type="file" class="form-control" placeholder="Images" name="result[]" autocomplete="off" multiple>
       </div>
       <br>
       <div class="input-group">

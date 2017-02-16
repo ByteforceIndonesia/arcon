@@ -28,6 +28,7 @@
 {
   margin-bottom:2em;
   height:100px;
+  z-index:10000;
 }
 
 .ImagePack{
