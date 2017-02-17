@@ -326,6 +326,15 @@ class Admin extends CI_Controller {
                 $this->load->view('admin/template/footer', $this->data);
             }break;
 
+            case 'return':
+            {
+                $this->data['projects'] = $this->admin_model->get_projects();
+
+                $this->load->view('admin/template/header', $this->data);
+                $this->load->view('admin/projects_overview', $this->data);
+                $this->load->view('admin/template/footer', $this->data);
+            }break;
+
             case 'delete':
             {
                 //Get Project details
@@ -351,10 +360,10 @@ class Admin extends CI_Controller {
                     //Put data in array
                     $data = array (
 
-                        'project_uuid'      => uniqid(),
-                        'name'                => $this->input->post('name'),
-                        'description'         => $this->input->post('desc'),
-                        'details'            => $this->input->post('catagory')
+                        'project_uuid'          => $this->input->post('uuid'),
+                        'name'                  => $this->input->post('name'),
+                        'description'           => $this->input->post('desc'),
+                        'details'               => $this->input->post('catagory')
 
                         );
 
@@ -464,12 +473,13 @@ class Admin extends CI_Controller {
                     //Insert
                     if(!$this->admin_model->insert_project($data))
                     {
-                        return 'error inserting into database';
+                        $this->session->set_flashdata('error', 'Success Inserting into database');
+                        redirect(baseurl('admin/project'));
                     }
 
                     $this->session->set_flashdata('success', 'Success Adding Edit Project');
-                    $_POST = '';
-                    $this->project('');
+                    unset($_POST);
+                    redirect(baseurl('admin/project'));
                     exit;
 
                 }else
@@ -640,8 +650,8 @@ class Admin extends CI_Controller {
                     }
 
                     $this->session->set_flashdata('success', 'Success Adding New Project');
-                    $_POST = '';
-                    $this->project('');
+                    unset($_POST);
+                    redirect(base_url('admin/project'));
                     exit;
                 }else
                 {
