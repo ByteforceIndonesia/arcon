@@ -28,7 +28,7 @@
                 <div class="col-lg-12">
                     <ul class="pull-right wi-navigation-center horizontal-center  ">
                         <li class="wi-logo-mob"></li>
-                        <a href = "<?php echo base_url(); ?>" <?php if($this->uri->segment(1) != 'gallery'): ?>class ="active"<?php endif; ?>><li class="links">Home</li></a>
+                        <a href = "<?php echo base_url(); ?>" <?php if($this->uri->segment(1) != 'gallery'): ?>                     class ="active"<?php endif; ?>><li class="links">Home</li></a>
                         <a href = "<?php echo base_url(); ?>#about"><li class="links">About</li></a>
                         <a href = "<?php echo base_url('gallery') ?>" <?php if($this->uri->segment(1) == 'gallery'): ?>class ="active"<?php endif; ?>><li class="links">Gallery</li></a>
                         <a href = "<?php echo base_url(); ?>#whatwedo"><li class="links">What we do</li></a>

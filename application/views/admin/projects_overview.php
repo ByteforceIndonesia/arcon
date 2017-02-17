@@ -33,8 +33,8 @@
         } 
     ?>
 <div class="container">
-<div class="row">
-  <div class="col-lg-4 pull-right">
+<div class="row pull-right">
+  <div class="col-lg-4">
     <a href="<?php echo base_url('admin/project/new') ?>" class="btn btn-primary">
         New Project
     </a>

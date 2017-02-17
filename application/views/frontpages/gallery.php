@@ -28,7 +28,7 @@
                 }
               ?>
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
-                    <div class= "ImagePack" style="background:url('<?php echo base_url() . $project->images ?>')">
+                    <div class= "ImagePack animated fadeInUp" style="background:url('<?php echo base_url() . $project->images ?>')">
                         <span class="galleryImageTitle"><?php echo $project->name ?></span>
                     </div>
                 </a>
@@ -42,7 +42,7 @@
                 if($count > count($gallery)) break;
               ?>
                 <a href= "<?php echo base_url('gallery/project/' . $project->project_uuid) ?>">
-                    <div class= "ImagePack" style="background:url('<?php echo base_url() . $project->images ?>')">
+                    <div class= "ImagePack animated fadeInUp" style="background:url('<?php echo base_url() . $project->images ?>')">
                         <span class="galleryImageTitle"><?php echo $project->name ?></span>
                     </div>
                 </a>
