@@ -233,6 +233,32 @@ $(document).ready(function () {
            $('.parallax-buskwak').parallax({imageSrc: '#buskwak'});
              var parax = $('.parallax-slider');
 
+
+             var type = 0;
+             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+               // Windows Phone must come first because its UA also contains "Android"
+             if (/windows phone/i.test(userAgent)) {
+               var parax =$('.parallax-buskwak');
+                 console.log("Windows Phone");
+                 type=1;
+             }
+
+             if (/android/i.test(userAgent)) {
+               var parax =$('.parallax-buskwak');
+                  console.log( "Android");
+                  type=1;
+             }
+
+             // iOS detection from: http://stackoverflow.com/a/9039885/177710
+             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+               var parax =$('.parallax-buskwak');
+                  console.log( "iOS");
+                  type=1;
+             }
+
+
+
             $('.parallax-window').parallax({imageSrc: ''});
                       //console.log();
             $('.parallax-slider').attr("src","assets/images/slider/1.jpg");
@@ -248,11 +274,21 @@ $(document).ready(function () {
               //start with id=0 after 5 seconds
 
 
+
+                if(type=1){
+                                            parax.css('background-image',"url('"+dataArray[thisId]+"')");
+
+                }
               window.setInterval(function(){
 
                       parax.addClass('transparentClass');
                   setTimeout(function () {
+                    if(type=0){
                         parax.attr('src',dataArray[thisId]);
+                      } else{
+
+                            parax.css('background-image',"url('"+dataArray[thisId]+"')");
+                      }
                   }, 400);
                   setTimeout(function () {
                     parax.removeClass('transparentClass');
