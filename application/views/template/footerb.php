@@ -7,11 +7,13 @@
    <div class="">
      <div class="row wrapper">
        <div class="marketingPhone breakword slick-car">
-           <?php foreach ($team as $people): ?>
+           <?php foreach ($team as $count => $people): ?>
              <div class="breakword">
                <li>
-                 <div class="contact-profile-picture">
-                   <center><img src="<?php echo base_url() . $people->image ?>" width="125px" height="125px"/></div></center>
+                 <center>
+                 <div class="contact-profile-picture" style="background:url('<?php echo $people->image ?>')">
+                 </div>
+                </center>
                    <span class="contact-name">
                        <?php echo $people->name ?>
                    </span>

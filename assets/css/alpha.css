@@ -45,12 +45,14 @@
 
     #contact
     {
-        overflow-y:none;
+        overflow-y:none;
+
         height:300px;
     }
 
     .marketingPhone li{
-        margin-top:-10px;
+        margin-top:-10px;
+
         margin-bottom:36px;
     }
 
@@ -88,13 +90,15 @@
     }
 
     .marketingPhone li{
-        margin-top:-10px;
+        margin-top:-10px;
+
         margin-bottom:36px;
     }
 
     #contact
     {
-        overflow:none;
+        overflow:none;
+
         height:350px !important;
     }
 
@@ -179,7 +183,8 @@ body
 .wi-navigation-center{
   overflow:hidden;
   padding-top:3em;
-  padding-left:0;
+  padding-left:0;
+
   width : 100%;
   text-align : center;
 
@@ -229,7 +234,8 @@ text-decoration: none;
 }
 
 .wi-navigation-left {
-  margin-top:3px;
+  margin-top:3px;
+
   padding-left : 0px;
 }
 
@@ -330,7 +336,8 @@ text-decoration: none;
 
 .wi-logo
 {
-    padding-top:10px;
+    padding-top:10px;
+
     width: 220px;
     height: 42px;
     background-image: url('../images/logotext.png');
@@ -565,10 +572,22 @@ width:80%
   -ms-hyphens: auto;
 }
 
-.contact-profile-picture img{position : relative;
+.contact-profile-picture img{
+  position : relative;
   margin-bottom : 15px;
   border-radius : 100%;
 }
+
+.contact-profile-picture
+{
+    width : 125px;
+    height: 125px;
+    margin-bottom :30px;
+    background-size:cover !important;    
+    transition : all 0.3s ease-in;
+    border-radius: 50%;
+}
+
 .contact-form input:focus{
   padding-left : 0px;
   border: 0px;
@@ -580,7 +599,8 @@ width:80%
 
 #contact
 {
-    overflow:none;
+    overflow:none;
+
     height:350px !important;
 }
 
