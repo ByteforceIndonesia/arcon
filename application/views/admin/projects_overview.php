@@ -1,3 +1,9 @@
+
+<!-- DataTables -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-2.2.4/dt-1.10.13/datatables.min.css"/>
+ 
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-2.2.4/dt-1.10.13/datatables.min.js"></script>
+
 <h1>Project Overview</h1>
 <hr width = "100%">
 
@@ -32,17 +38,13 @@
           <?php
         } 
     ?>
-<div class="container">
-<div class="row pull-right">
-  <div class="col-lg-4">
-    <a href="<?php echo base_url('admin/project/new') ?>" class="btn btn-primary">
+    
+  <a href="<?php echo base_url('admin/project/new') ?>" class="btn btn-primary">
         New Project
     </a>
-  </div>
-</div>
   <br><br>
 
-  <table class="table table-bordered" id="projects" width="100%">
+  <table class="table table-bordered" id="projects" style="width:100%">
     <thead>
       <tr>
           <td>Num</td>
@@ -71,7 +73,6 @@
       <?php endforeach; ?>
     </tbody>
   </table>
-</div>
 <script type="text/javascript">
   $(document).ready( function () {
     $('#projects').DataTable();

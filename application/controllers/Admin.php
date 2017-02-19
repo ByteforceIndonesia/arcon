@@ -54,18 +54,9 @@ class Admin extends CI_Controller {
 
                         if ( ! $this->upload->do_upload('about_text_file'))
                         {
-                                $error = array('error' => $this->upload->display_errors());
-
-                                $errors = array(
-
-                                    'error' => 'Error Updating About Us (Err:002a)',
-                                    'file'  => $error
-
-                                );
-
-                                $this->session->set_flashdata($errors);
-
-                                print_r($error);
+                            $errors = $this->upload->display_errors();
+                            $this->session->set_flashdata('file', $errors);
+                            redirect(base_url('admin'));
                             exit;
                         }
                     }
@@ -163,7 +154,9 @@ class Admin extends CI_Controller {
 
                             if ( !$this->upload->do_upload('img') )
                             {
-                                print_r($this->upload->display_errors());
+                                $errors = $this->upload->display_errors();
+                                $this->session->set_flashdata('file', $errors);
+                                redirect(base_url('admin'));
                                 exit;
                             }
                         }
@@ -227,29 +220,6 @@ class Admin extends CI_Controller {
                         }
                     }break;
 
-                    case 'home_slider':
-                    {
-                        if(!empty($file['name']))
-                        {
-                            $config['file_name']            = 'home_slider.jpg';
-                            $config['allowed_types']        = 'jpg';
-                            $config['upload_path']          = './assets/images/';
-                            $config['max_size']             = 7000;
-                            $config['overwrite']            = TRUE;
-
-                            $this->load->library('upload', $config);
-                            $this->upload->initialize($config);
-
-                             if ( ! $this->upload->do_upload('home_slider'))
-                                {
-                                        $error = array('error' => $this->upload->display_errors());
-
-                                        $this->session->set_flashdata($errors);
-                                        return false;
-                                }
-                        }
-                    }break;
-
                     case 'banner_comercial':
                     {
                         if(!empty($file['name']))
@@ -265,10 +235,10 @@ class Admin extends CI_Controller {
 
                              if ( ! $this->upload->do_upload('banner_comercial'))
                                 {
-                                        $error = array('error' => $this->upload->display_errors());
-
-                                        $this->session->set_flashdata($errors);
-                                        return false;
+                                    $errors = $this->upload->display_errors();
+                                    $this->session->set_flashdata('file', $errors);
+                                    redirect(base_url('admin'));
+                                    exit;
                                 }
                         }
                     }break;
@@ -288,10 +258,10 @@ class Admin extends CI_Controller {
 
                              if ( ! $this->upload->do_upload('banner_residential'))
                                 {
-                                        $error = array('error' => $this->upload->display_errors());
-
-                                        $this->session->set_flashdata($errors);
-                                        return false;
+                                    $errors = $this->upload->display_errors();
+                                    $this->session->set_flashdata('file', $errors);
+                                    redirect(base_url('admin'));
+                                    exit;
                                 }
                         }
                     }break;
@@ -367,10 +337,6 @@ class Admin extends CI_Controller {
 
                         );
 
-                    $data['images'] = 'assets/images/projects/' . $this->input->post('catagory') . '/' . $data['project_uuid'] . '/freatured';
-
-                    $data['datas'] = 'assets/images/projects/' . $this->input->post('catagory') . '/' . $data['project_uuid'];
-
                     //Changes in gallery table
                     if($this->input->post('freatured') == 1)
                     {
@@ -392,86 +358,17 @@ class Admin extends CI_Controller {
                         $this->upload->initialize($config);
                         if(!$this->upload->do_upload('freatured'))
                         {
-                            print_r($this->upload->display_errors());
-                            echo $config['upload_path'];
+                            $errors = $this->upload->display_errors();
+                            $this->session->set_flashdata('file', $errors);
+                            redirect(base_url('admin/project'));
                             exit;
-                        }
-                    }
-
-                    //Design File Uploads
-                    if($_FILES['design'])
-                    {
-                        //Config for upload class
-                        $config['upload_path']          = './' . $data['datas'] . '/design/';
-                        $config['allowed_types']        = 'jpg|png|docx|pdf';
-
-                        $this->load->library('upload');
-
-                        //Store the array
-                        $files = $_FILES;
-
-                        for($i = 0; $i < count($_FILES['design']['name']); $i++)
-                        {
-                            if(!empty($_FILES['design']['name'][$i]))
-                            {
-                                //Tricks the system as if we're uploading one file
-                                $_FILES['img']['name']= $files['design']['name'][$i];
-                                $_FILES['img']['type']= $files['design']['type'][$i];
-                                $_FILES['img']['tmp_name']= $files['design']['tmp_name'][$i];
-                                $_FILES['img']['error']= $files['design']['error'][$i];
-                                $_FILES['img']['size']= $files['design']['size'][$i];
-
-                                $config['file_name']  = $i . '.jpg';
-                                $this->upload->initialize($config);
-
-                                if ( !$this->upload->do_upload('img') )
-                                {
-                                    print_r($this->upload->display_errors());
-                                    exit;
-                                }
-                            }
-                        }
-                    }
-
-                    //Result File Uploads
-                    if($_FILES['result'])
-                    {
-                        //Config for upload class
-                        $config['upload_path']          = './' . $data['datas'] . '/result/';
-                        $config['allowed_types']        = 'jpg|png|docx|pdf';
-
-                        $this->load->library('upload');
-
-                        //Store the array
-                        $files = $_FILES;
-
-                        for($i = 0; $i < count($_FILES['result']['name']); $i++)
-                        {
-                            if(!empty($_FILES['result']['name'][$i]))
-                            {
-                                //Tricks the system as if we're uploading one file
-                                $_FILES['img']['name']= $files['result']['name'][$i];
-                                $_FILES['img']['type']= $files['result']['type'][$i];
-                                $_FILES['img']['tmp_name']= $files['result']['tmp_name'][$i];
-                                $_FILES['img']['error']= $files['result']['error'][$i];
-                                $_FILES['img']['size']= $files['result']['size'][$i];
-
-                                $config['file_name']  = $i . '.jpg';
-                                $this->upload->initialize($config);
-
-                                if ( !$this->upload->do_upload('img') )
-                                {
-                                    print_r($this->upload->display_errors());
-                                    exit;
-                                }
-                            }
                         }
                     }
 
                     $data['images'] = $data['images'] . '/freatured.jpg';
 
-                    //Insert
-                    if(!$this->admin_model->insert_project($data))
+                    //Update
+                    if(!$this->admin_model->update_project($data))
                     {
                         $this->session->set_flashdata('error', 'Success Inserting into database');
                         redirect(baseurl('admin/project'));
@@ -481,7 +378,6 @@ class Admin extends CI_Controller {
                     unset($_POST);
                     redirect(baseurl('admin/project'));
                     exit;
-
                 }else
                 {
                     $this->data['project'] = $this->admin_model->get_project($uuid);
@@ -565,8 +461,9 @@ class Admin extends CI_Controller {
                         $this->upload->initialize($config);
                         if(!$this->upload->do_upload('freatured'))
                         {
-                            print_r($this->upload->display_errors());
-                            echo $config['upload_path'];
+                            $errors = $this->upload->display_errors();
+                            $this->session->set_flashdata('file', $errors);
+                            redirect(base_url('admin/project'));
                             exit;
                         }
                     }
@@ -599,7 +496,9 @@ class Admin extends CI_Controller {
 
                                 if ( !$this->upload->do_upload('img') )
                                 {
-                                    print_r($this->upload->display_errors());
+                                    $errors = $this->upload->display_errors();
+                                    $this->session->set_flashdata('file', $errors);
+                                    redirect(base_url('admin/project'));
                                     exit;
                                 }
                             }
@@ -634,7 +533,9 @@ class Admin extends CI_Controller {
 
                                 if ( !$this->upload->do_upload('img') )
                                 {
-                                    print_r($this->upload->display_errors());
+                                    $errors = $this->upload->display_errors();
+                                    $this->session->set_flashdata('file', $errors);
+                                    redirect(base_url('admin/project'));
                                     exit;
                                 }
                             }
@@ -693,7 +594,9 @@ class Admin extends CI_Controller {
 
                     if (!$this->upload->do_upload('img'))
                     {
-                        print_r($this->upload->display_errors());
+                        $errors = $this->upload->display_errors();
+                        $this->session->set_flashdata('file', $errors);
+                        redirect(base_url('admin'));
                         exit;
                     }
                 }
@@ -743,8 +646,10 @@ class Admin extends CI_Controller {
 
                   if (!$this->upload->do_upload('img'))
                   {
-                      print_r($this->upload->display_errors());
-                      exit;
+                    $errors = $this->upload->display_errors();
+                    $this->session->set_flashdata('file', $errors);
+                    redirect(base_url('admin'));
+                    exit;
                   }
               }
           }
@@ -755,6 +660,8 @@ class Admin extends CI_Controller {
 
       }else
       {
+          $this->data['sliders'] = glob('./assets/images/slider/*');
+
           $this->load->view('admin/template/header', $this->data);
           $this->load->view('admin/slider', $this->data);
           $this->load->view('admin/template/footer', $this->data);

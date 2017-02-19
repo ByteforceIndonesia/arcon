@@ -49,8 +49,14 @@ height : 100%;
 
 <!--Jquery-->
 <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+<!-- Jquery UI -->
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
   crossorigin="anonymous"></script>
 
 <!--Tether IO-->
@@ -68,11 +74,6 @@ height : 100%;
 <!-- CropIt -->
 <script type="text/javascript" src="<?php echo base_url() ?>assets/js/jquery.cropit.js">
 </script>
-
-<!-- DataTables -->
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs-3.3.7/jqc-1.12.4/dt-1.10.13/fh-3.1.2/r-2.1.0/datatables.min.css"/>
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.7/jqc-1.12.4/dt-1.10.13/fh-3.1.2/r-2.1.0/datatables.min.js"></script>
-
 
 </head>
     <body>
@@ -105,6 +106,12 @@ height : 100%;
         <a href="<?php echo base_url('admin/team') ?>">
             <li>
                 Edit Teams
+            </li>
+        </a>
+
+        <a href="<?php echo base_url('admin/sliders') ?>">
+            <li>
+                Edit Slider Images
             </li>
         </a>
 
