@@ -328,9 +328,9 @@ class Admin extends CI_Controller {
                 if($this->input->post())
                 {
                     //Put data in array
+                    $uuid = $this->input->post('uuid');
                     $data = array (
 
-                        'project_uuid'          => $this->input->post('uuid'),
                         'name'                  => $this->input->post('name'),
                         'description'           => $this->input->post('desc'),
                         'details'               => $this->input->post('catagory')
@@ -340,16 +340,16 @@ class Admin extends CI_Controller {
                     //Changes in gallery table
                     if($this->input->post('freatured') == 1)
                     {
-                        $this->admin_model->change_freatured($data['project_uuid'], 1);
+                        $this->admin_model->change_freatured($uuid, 1);
                     }else {
-                        $this->admin_model->change_freatured($data['project_uuid'], 0);
+                        $this->admin_model->change_freatured($uuid, 0);
                     }
 
                     //Freatured Pic Upload
-                    if($_FILES['freatured'])
+                    if(!empty($_FILES['freatured']['name']))
                     {
                         //Config for upload class
-                        $config['upload_path']          = './' . $data['images'];
+                        $config['upload_path']          = './assets/images/projects/' . $data['details'] . '/' . $uuid . '/freatured';
                         $config['allowed_types']        = 'jpg';
                         $config['overwrite']            = TRUE;
                         $config['file_name']            = 'freatured.jpg';
@@ -365,18 +365,17 @@ class Admin extends CI_Controller {
                         }
                     }
 
-                    $data['images'] = $data['images'] . '/freatured.jpg';
-
                     //Update
-                    if(!$this->admin_model->update_project($data))
+                    if(!$this->admin_model->update_project($data,$uuid))
                     {
                         $this->session->set_flashdata('error', 'Success Inserting into database');
                         redirect(baseurl('admin/project'));
+                        exit;
                     }
 
                     $this->session->set_flashdata('success', 'Success Adding Edit Project');
                     unset($_POST);
-                    redirect(baseurl('admin/project'));
+                    redirect(base_url('admin/project'));
                     exit;
                 }else
                 {
@@ -419,7 +418,7 @@ class Admin extends CI_Controller {
                     {
                         $this->session->set_flashdata('error', 'Create folder error');
                         $_POST = '';
-                        $this->project();
+                        redirect(base_url('admin'));
                         exit;
                     }else
                     {
@@ -427,7 +426,7 @@ class Admin extends CI_Controller {
                         {
                             $this->session->set_flashdata('error', 'Create folder error');
                             $_POST = '';
-                            $this->project();
+                            redirect(base_url('admin'));
                             exit;
                         }
 
@@ -435,7 +434,7 @@ class Admin extends CI_Controller {
                         {
                             $this->session->set_flashdata('error', 'Create folder error');
                             $_POST = '';
-                            $this->project();
+                            redirect(base_url('admin'));
                             exit;
                         }
 
@@ -443,7 +442,7 @@ class Admin extends CI_Controller {
                         {
                             $this->session->set_flashdata('error', 'Create folder error');
                             $_POST = '';
-                            $this->project();
+                            redirect(base_url('admin'));
                             exit;
                         }
                     }
@@ -666,6 +665,62 @@ class Admin extends CI_Controller {
           $this->load->view('admin/slider', $this->data);
           $this->load->view('admin/template/footer', $this->data);
       }
+    }
+
+    public function change_user ()
+    {
+        if($this->input->post())
+        {
+            $username   = $this->input->post('username');
+            $new_pass   = $this->input->post('password_new');
+            $old_pass   = $this->input->post('password_old');
+
+            $user = $this->admin_model->get_user($username);
+
+            if(password_verify($old_pass, $user->password))
+            {
+                // Hash password
+                $new_pass = password_hash($new_pass, PASSWORD_DEFAULT);
+
+                //Update DB
+                $this->admin_model->change_password($user->username, $username, $new_pass);
+                $this->session->set_flashdata('success', 'Success Account Settings');
+                redirect('admin');
+                exit;
+            }
+
+        }else
+        {
+            $this->load->view('admin/template/header', $this->data);
+            $this->load->view('admin/user', $this->data);
+            $this->load->view('admin/template/footer', $this->data);
+        }
+    }
+
+    public function test ()
+    {
+        //Freatured Pic Upload
+        if($_FILES)
+        {
+            //Config for upload class
+            $config['upload_path']          = './assets/images';
+            $config['allowed_types']        = 'jpg';
+            $config['overwrite']            = TRUE;
+            $config['file_name']            = 'freatured.jpg';
+
+            $this->load->library('upload', $config);
+            $this->upload->initialize($config);
+            if(!$this->upload->do_upload('freatured'))
+            {
+                print_r($this->upload->display_errors());
+                exit;
+            }
+        }else
+        {
+            $this->load->view('admin/template/header', $this->data);
+            $this->load->view('admin/new_project', $this->data);
+            $this->load->view('admin/template/footer', $this->data);
+        }
     }
 
     public function logout ()

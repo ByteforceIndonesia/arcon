@@ -57,6 +57,13 @@ class Admin_model extends CI_Model
     {
         return $this->db->insert('projects', $data);
     }
+    
+    public function update_project($data, $uuid)
+    {
+        $this->db->set($data);
+        $this->db->where('project_uuid', $uuid);
+        return $this->db->update('projects');
+    }
 
     public function make_freatured($uuid, $data)
     {
@@ -119,6 +126,20 @@ class Admin_model extends CI_Model
     public function get_parallax ()
     {
         return $this->db->get('parallax')->result();
+    }
+
+    //User
+    public function get_user ($username)
+    {   
+        return $this->db->get_where('admin',array('username' => $username))->row();
+    }
+
+    public function change_password ($old_user, $username, $password)
+    {   
+        $this->db->set('username', $username);
+        $this->db->set('password', $password);
+        $this->db->where('username', $old_user);
+        return $this->db->update('admin');
     }
 
 }

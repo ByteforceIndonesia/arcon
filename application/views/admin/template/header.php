@@ -68,7 +68,7 @@ height : 100%;
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
 <!--Tiny MCE-->
-<script src="//cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script src="//cloud.tinymce.com/stable/tinymce.min.js?apiKey=zbjkih4psdass55dhyxx68abl4afbzgu8qj49n1rkkrul1oy"></script>
 <script>tinymce.init({ selector:'textarea' });</script>
 
 <!-- CropIt -->
@@ -118,6 +118,12 @@ height : 100%;
         <a href="<?php echo base_url('admin/project') ?>">
             <li>
                 Projects
+            </li>
+        </a>
+
+        <a href="<?php echo base_url('admin/change_user') ?>">
+            <li>
+                Account Settings
             </li>
         </a>
 

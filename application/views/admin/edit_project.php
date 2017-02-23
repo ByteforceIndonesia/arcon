@@ -1,7 +1,7 @@
     <h1>Edit Project</h1>
     <br><br>
     <?php 
-      echo form_open_multipart('admin/project/new');
+      echo form_open_multipart('admin/project/edit');
       //For File Manager
       $this->session->set_flashdata('uuid', $project->project_uuid);
       // For uri
@@ -48,7 +48,12 @@
         </a>
       </div>
       <br>
+      <!-- UUID -->
+      <input type="hidden" name="uuid" value="<?php echo $project->project_uuid ?>">
       <div class="input-group">
-        <button type="submit" class="float btn btn-primary">Make New Project</button>
+        <button type="submit" class="float btn btn-primary">Edit Project</button>
+        <a href="<?php echo base_url('admin/project') ?>">
+          <button type="button" class="float btn btn-primary">Return</button>
+        </a>
         </div>
     <?php echo form_close (); ?>
