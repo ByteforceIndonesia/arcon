@@ -236,7 +236,6 @@ $(document).ready(function () {
              var type = 0;
              var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-               // Windows Phone must come first because its UA also contains "Android"
              if (/windows phone/i.test(userAgent)) {
                var parax =$('.parallax-buskwak');
                  console.log("Windows Phone");
@@ -249,43 +248,33 @@ $(document).ready(function () {
                   type=1;
              }
 
-             // iOS detection from: http://stackoverflow.com/a/9039885/177710
              if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                var parax =$('.parallax-buskwak');
                   console.log( "iOS");
                   type=1;
              }
 
-
-
             $('.parallax-window').parallax({imageSrc: ''});
-                      //console.log();
             $('.parallax-slider').attr("src","assets/images/slider/1.jpg");
             var thisId=0;
             $(function(){
-              //prepare Your data array with img urls
               var dataArray=new Array();
               dataArray[0]="<?php echo base_url() ?>assets/images/slider/1.jpg";
               dataArray[1]="<?php echo base_url() ?>assets/images/slider/2.jpg";
               dataArray[2]="<?php echo base_url() ?>assets/images/slider/3.jpg";
               dataArray[3]="<?php echo base_url() ?>assets/images/slider/4.jpg";
 
-              //start with id=0 after 5 seconds
-
-
-
-                if(type=1){
-                                            parax.css('background-image',"url('"+dataArray[thisId]+"')");
+                if(type==1){
+                   parax.css('background-image',"url('"+dataArray[thisId]+"')");
 
                 }
               window.setInterval(function(){
 
                       parax.addClass('transparentClass');
                   setTimeout(function () {
-                    if(type=0){
+                    if(type==0){
                         parax.attr('src',dataArray[thisId]);
                       } else{
-
                             parax.css('background-image',"url('"+dataArray[thisId]+"')");
                       }
                   }, 400);
