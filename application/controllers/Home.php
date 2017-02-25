@@ -36,8 +36,8 @@ class Home extends MY_Controller {
 
 			$this->load->library('email');
 
-			$this->email->from('consumer_kickbackr@arcon.com', 'Machine Generated');
-			$this->email->to('someone@example.com');
+			$this->email->from($contact);
+			$this->email->to('sidhartasj@arconindonesia.com');
 
 			$this->email->subject('Request by ' . $name);
 			$this->email->message($message . 'My Contact : ' . $contact);
