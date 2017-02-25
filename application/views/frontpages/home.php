@@ -76,7 +76,7 @@
           <div class="image">
             <div class="col-lg-4 serviceType animated what-<?php echo $counter; ?>">
               <h2 class="col-lg-12 wwdTitle"><?php echo $counter . '. ' . $what->name; ?></h2>
-              <img src="<?php echo base_url() . $what->link; ?>" alt="" class="" width = "100%">
+              <div style="background:url('<?php echo base_url() . $what->link; ?>')" class="whatwedoImage"></div>
               <ul class="serviceList">
                 <?php echo $what->text; ?>
               </ul>
